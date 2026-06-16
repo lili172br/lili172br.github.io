@@ -170,7 +170,7 @@
                     再測一次
                 </button>
                 <button onclick="generateSnapshotAndNavigate()" class="btn-action w-full bg-emerald-500 text-black font-bold text-xs tracking-widest py-3.5 rounded-full hover:shadow-[0_0_15px_rgba(16,185,129,0.4)]">
-                    儲存截圖並前往
+                    儲存結果
                 </button>
             </div>
         </div>
@@ -204,7 +204,6 @@
         let userScores = { Ti: 0, Te: 0, Fi: 0, Fe: 0, Si: 0, Se: 0, Ni: 0, Ne: 0 };
         let audioCtx = null;
 
-        // 音效模組：全量包裹 try-catch，任何沙盒報錯都不會阻斷主線執行
         function playClickSound(type = 'default') {
             try {
                 if (!window.AudioContext && !window.webkitAudioContext) return;
@@ -251,12 +250,9 @@
             }
         }
 
-        // 核心切換邏輯：保證 100% 執行
         function activateQuizStage() {
-            // 嘗試播放音效（若失敗則會被音效內部的 catch 擋掉，絕不卡死）
             playClickSound('special');
             
-            // 強制切換 DOM 狀態
             const landing = document.getElementById("landing-stage");
             const quiz = document.getElementById("quiz-stage");
             
@@ -267,17 +263,14 @@
             }
         }
         
-        // 確保按鈕在任何複雜的 iframe 嵌套中都能精準綁定事件
         document.addEventListener("DOMContentLoaded", function() {
             const startBtn = document.getElementById("start-quiz-btn");
             if (startBtn) {
-                // 清除可能殘留的舊 handler，並重新綁定唯一監聽器
                 startBtn.removeEventListener("click", activateQuizStage);
                 startBtn.addEventListener("click", activateQuizStage);
             }
         });
 
-        // 如果頁面已經載入完成但事件未綁上，進行二次兜底檢查
         if (document.readyState === "complete" || document.readyState === "interactive") {
             const startBtn = document.getElementById("start-quiz-btn");
             if (startBtn) startBtn.addEventListener("click", activateQuizStage);
@@ -359,7 +352,6 @@
         
         function generateSnapshotAndNavigate() {
             playClickSound('special');
-            // html2canvas 包裹 try catch 保護，防止沙盒 CORS 直接炸掉 JS
             try {
                 html2canvas(document.getElementById("capture-area"), { 
                     backgroundColor: "#0c0c0c", 
@@ -375,7 +367,6 @@
                         window.open("https://s.shopee.tw/70Hnm7rQGp", "_blank", "noopener,noreferrer");
                     }, 1000);
                 }).catch(err => {
-                    // 萬一截圖在沙盒裡失敗，依然強制跳轉，不損害業務流程
                     window.open("https://s.shopee.tw/70Hnm7rQGp", "_blank", "noopener,noreferrer");
                 });
             } catch (e) {
