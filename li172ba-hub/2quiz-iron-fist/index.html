@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- ==========================================================================
+         START: Open Graph / 社群連結縮圖優化 (已同步更新為 social-preview.png)
+         ========================================================================== -->
+    <!-- 通用 Meta 標籤 -->
+    <meta name="description" content="不只是教育，更是職場！解構你隱藏在社會化面具下的心理本質，體制壓力下你選擇妥協還是反抗？">
+    
+    <!-- Open Graph / Threads / FB / LINE -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="鐵拳教育 | 潛意識人格審判測驗">
+    <meta property="og:description" content="不只是教育，更是職場！解構你隱藏在社會化面具下的心理本質，體制壓力下你選擇妥協還是反抗？">
+    <meta property="og:image" content="social-preview.png">
+    
+    <!-- Twitter / X 最佳化 -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="鐵拳教育 | 潛意識人格審判測驗">
+    <meta name="twitter:description" content="不只是教育，更是職場！12道決策情境解構你的體制生存率。">
+    <meta name="twitter:image" content="social-preview.png">
+    <!-- ==========================================================================
+         END: Open Graph 優化
+         ========================================================================== -->
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9874958587973886" crossorigin="anonymous"></script>
+    <title>鐵拳教育 | 潛意識人格審判</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&display=swap');
+        body { 
+            background-color: #050505; color: #d1d1d1; font-family: 'Courier Prime', monospace;
+            background-image: radial-gradient(circle at 2px 2px, #1a1a1a 1px, transparent 0);
+            background-size: 40px 40px;
+        }
+        .file-border { border: 1px solid #333; box-shadow: 0 0 20px rgba(185, 28, 28, 0.1); }
+        .scanline::before {
+            content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+            background-size: 100% 2px, 3px 100%; pointer-events: none; z-index: 50;
+        }
+        .card { background: #0a0a0a; border: 1px solid #333; }
+        .hidden { display: none; }
+        h2 { border-left: 3px solid #b91c1c; padding-left: 12px; margin-top: 2rem; margin-bottom: 1rem; color: white; font-weight: bold; }
+        .ad-space { min-height: 100px; margin: 2rem 0; border: 1px dashed #333; display: flex; align-items: center; justify-content: center; color: #333; font-size: 10px; }
+        
+        .crt-flash { animation: crtFlicker 0.15s ease-out; }
+        @keyframes crtFlicker {
+            0% { opacity: 0.3; background-color: #1a0505; }
+            50% { opacity: 0.8; }
+            100% { opacity: 1; }
+        }
+        .btn-glow:hover {
+            box-shadow: 0 0 15px rgba(185, 28, 28, 0.6);
+            text-shadow: 0 0 4px rgba(255, 255, 255, 0.5);
+        }
+    </style>
+</head>
+<body class="flex flex-col items-center justify-center min-h-screen p-4 scanline relative">
+
+    <div class="fixed top-4 right-4 z-50">
+        <button id="audio-toggle" onclick="toggleAudio()" class="px-3 py-1.5 border border-emerald-500 bg-zinc-950 text-emerald-400 font-mono text-[10px] uppercase tracking-wider hover:text-white hover:border-white transition-all">
+            系統音效：已開啟 🔊
+        </button>
+    </div>
+
+    <main id="landing-page" class="max-w-lg w-full file-border bg-[#0a0a0a] p-8 md:p-12 relative">
+        <header class="mb-10 border-b border-zinc-800 pb-6 relative">
+            <div class="absolute top-0 right-0 flex items-center gap-1.5 text-[9px] text-red-500 font-mono tracking-wider animate-pulse">
+                <span class="w-1.5 h-1.5 rounded-full bg-red-600"></span> LIVE FEED
+            </div>
+            
+            <h1 class="text-4xl font-black italic uppercase tracking-tighter text-white mb-2">鐵拳教育</h1>
+            <div class="flex flex-col gap-1 font-mono text-[9px] text-zinc-500 uppercase tracking-[0.2em]">
+                <p>Institutional Assessment // Version 2026</p>
+                <p class="text-zinc-600 text-[8px] tracking-normal">SYS.LOC: SHILIN_TAIPEI // NODE_ID: #404-FIST</p>
+            </div>
+        </header>
+
+        <section class="space-y-4 text-xs text-zinc-400 leading-relaxed">
+            <h2>關於 Netflix《鐵拳教育》</h2>
+            <p>《鐵拳教育》深入探討了校園內部的階級對立與權力結構。當教育體制成為壓迫的溫床，學生被迫在「服從秩序」與「徹底崩壞」之間做出極端抉擇。</p>
+            
+            <div class="my-6 border-y border-zinc-900 py-4 text-center">
+                <p class="text-red-600 font-black tracking-[0.15em] text-sm uppercase italic">「服從秩序，還是徹底崩壞？」</p>
+                <p class="text-[9px] text-zinc-600 font-mono mt-1">THE SYSTEM IS WATCHING YOUR SUBCONSCIOUS</p>
+            </div>
+
+            <h2>潛意識人格審判計畫</h2>
+            <p>本測驗根據劇中人物原型與行為邏輯開發，透過 12 道決策情境，解構你隱藏在社會化面具下的心理本質。</p>
+        </section>
+
+        <div class="ad-space"><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9874958587973886" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins></div>
+
+        <div class="flex justify-between items-center text-[10px] font-mono text-zinc-500 mb-2 px-1">
+            <span>[ REPORT_TYPE: IN-DEPTH ]</span>
+            <span>12 QUESTIONS // ⏱️ 2 MIN</span>
+        </div>
+        
+        <button onclick="startQuiz()" class="block w-full py-5 bg-white text-black text-center font-black uppercase tracking-widest hover:bg-red-700 hover:text-white transition-all duration-300 btn-glow">
+            進入審判核心 START
+        </button>
+
+        <section class="space-y-4 text-xs text-zinc-400 leading-relaxed mt-10">
+            <h2>鐵拳教育與臺灣的關聯</h2>
+            <p>雖然劇作背景設定於虛構體系，但臺灣高度競爭的升學文化、嚴苛的團體主義規範，以及校園內隱形的階級流動，皆與劇中結構有著驚人的共鳴點。</p>
+            
+            <h2>鐵拳教育是否與我們有關？</h2>
+            <p>我們在職場與校園中，是否也習慣了「識時務者為俊傑」的生存法則？本測驗將協助你釐清，在面對體制壓力時，你的潛意識是選擇妥協、抵抗，還是成為體制的一環。</p>
+        </section>
+
+        <div class="mt-10">
+            <p class="text-center text-xs font-bold tracking-[0.2em] text-red-500 uppercase italic mb-2">「不只是教育，更是職場」</p>
+            <a href="https://s.shopee.tw/70Hnm7rQGp" target="_blank" class="ad-space block text-center border border-dashed border-zinc-800 hover:border-red-800 hover:bg-zinc-950/50 transition-all duration-300 group cursor-pointer my-0">
+                <div class="flex flex-col items-center justify-center h-full space-y-1">
+                    <span class="text-zinc-600 group-hover:text-red-500 text-[10px] font-mono tracking-widest transition-colors">[ 廣告贊助 // 鐵拳防衛合作社 ]</span>
+                    <span class="text-zinc-700 group-hover:text-zinc-400 text-[9px] transition-colors">點擊進入機密物資補給站 🛒</span>
+                </div>
+            </a>
+        </div>
+        
+        <footer class="mt-10 text-[9px] text-zinc-600 text-center font-mono">
+            SECURED BY IRON FIST PSYCHOLOGY LAB // © 2026
+        </footer>
+    </main>
+
+    <div id="quiz-container" class="max-w-lg w-full hidden">
+        <div id="question-box" class="card p-8 transition-all duration-150">
+            <div class="mb-8">
+                <div class="flex justify-between text-[8px] uppercase tracking-[0.2em] text-zinc-600 mb-1">
+                    <span>安全監控</span>
+                    <span id="progress-text">0%</span>
+                    <span>審判危險值</span>
+                </div>
+                <div class="w-full h-1 bg-zinc-900 overflow-hidden">
+                    <div id="scan-bar" class="h-full bg-emerald-600 transition-all duration-700 ease-in-out" style="width: 8%;"></div>
+                </div>
+            </div>
+            <h2 id="question-text" class="text-lg font-bold text-white mb-8 leading-relaxed italic"></h2>
+            <div id="options-box" class="space-y-4"></div>
+        </div>
+
+        <div id="result-box" class="hidden w-full">
+            <div id="capture-area" class="bg-[#050505] p-10 border border-zinc-800 relative overflow-hidden shadow-2xl">
+                <div class="absolute top-0 left-0 w-4 h-4 border-t-2 border-l-2 border-red-700 z-10"></div>
+                <div class="absolute bottom-0 right-0 w-4 h-4 border-b-2 border-r-2 border-red-700 z-10"></div>
+                
+                <div class="absolute -right-10 -bottom-10 text-[120px] font-black text-zinc-900/40 rotate-[-15deg] select-none pointer-events-none z-0">FIST</div>
+                
+                <div class="relative z-10">
+                    <p class="text-xs tracking-[0.25em] text-red-600 mb-6 uppercase font-black border-b border-zinc-800 pb-2">Bureau of Social Audit // 審判鑑定報告</p>
+                    
+                    <div class="mb-6">
+                        <h1 id="result-title" class="text-5xl font-black text-white uppercase tracking-tighter mb-4 italic"></h1>
+                        
+                        <div class="flex flex-wrap items-center gap-2">
+                            <span id="alignment-label" class="text-[10px] bg-zinc-800 text-zinc-300 px-2 py-0.5 uppercase tracking-wider font-bold"></span>
+                            <span id="danger-label" class="text-[10px] px-2 py-0.5 uppercase font-bold tracking-wider"></span>
+                        </div>
+                    </div>
+
+                    <div class="bg-[#0a0a0a] p-6 border-l-4 border-red-800 mb-6">
+                        <p id="result-desc" class="text-sm text-zinc-300 italic leading-relaxed"></p>
+                    </div>
+
+                    <div class="w-full h-64 mb-6 bg-zinc-900/30 p-2 border border-zinc-900 flex items-center justify-center">
+                        <canvas id="radarChart"></canvas>
+                    </div>
+
+                    <div class="bg-zinc-950 border border-zinc-900 p-4 mb-6 flex items-center justify-between">
+                        <div>
+                            <span class="text-zinc-500 text-[10px] uppercase tracking-wider block mb-0.5">Threads Community Stats</span>
+                            <span class="text-zinc-300 text-xs font-bold">經大數據比對，在「脆」上面只有</span>
+                        </div>
+                        <div class="text-right">
+                            <span id="threads-percentage" class="text-2xl font-black text-red-600 font-mono tracking-tighter">--%</span>
+                            <span class="text-zinc-400 text-[10px] block font-bold">同類人格特質</span>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4 border-t border-zinc-800">
+                        <div>
+                            <span class="text-zinc-500 block mb-1.5 uppercase tracking-widest text-[10px]">Destiny Link // 命運連結建議</span>
+                            <span id="destiny-link-text" class="text-white font-bold text-xs leading-relaxed block tracking-wide"></span>
+                        </div>
+                        <div class="md:text-right flex flex-col justify-end">
+                            <div>
+                                <span class="text-zinc-500 block mb-1 uppercase tracking-widest text-xs font-bold">Serial No // 驗證碼</span>
+                                <span class="text-zinc-200 font-mono text-sm block font-bold tracking-wider">#2026-FIST-X</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-1 gap-3 mt-8">
+                <button onclick="resetQuiz()" class="w-full py-4 border-2 border-zinc-700 text-zinc-300 hover:text-white hover:border-white transition-all uppercase text-sm font-bold tracking-widest bg-transparent">不服，重新檢測</button>
+                <button onclick="saveAndRedirect()" class="w-full py-5 bg-white text-black font-black uppercase tracking-widest hover:bg-red-700 hover:text-white transition-all text-sm btn-glow">儲存審判結果（生成小卡）</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const quizData = [
+            { q: "Q1. 在校園霸凌中，如果必須選一個位置，你會在哪？", options: [{t:"A. 站在施暴者前方阻擋", r:"覺醒者"}, {t:"B. 站在遠處錄影紀錄，準備爆料", r:"李志赫"}, {t:"C. 坐在位子上讀書，假裝沒看見", r:"旁觀者"}, {t:"D. 主動加入霸凌者隊伍，保證自己安全", r:"牆頭草"}] },
+            { q: "Q2. 你認為「教育」的核心應該是什麼？", options: [{t:"A. 絕對的紀律與懲戒", r:"羅華鎮"}, {t:"B. 系統性的結構改革", r:"金敏秀"}, {t:"C. 篩選人才，汰弱留強", r:"權校長"}, {t:"D. 徹底的破壞與重組", r:"韓秀賢"}] },
+            { q: "Q3. 當你握有學校高層的一項秘密黑料，你會怎麼做？", options: [{t:"A. 當面與其對質，逼迫其認罪", r:"羅華鎮"}, {t:"B. 匿名寄給新聞台，毀滅其聲望", r:"李志赫"}, {t:"C. 將證據存起來，作為日後談判籌碼", r:"權校長"}, {t:"D. 覺得太麻煩，直接銷毀", r:"旁觀者"}] },
+            { q: "Q4. 當你身處極度弱勢，卻被強者無故羞辱，你的反應是？", options: [{t:"A. 忍氣吞聲，尋找機會反咬一口", r:"牆頭草"}, {t:"B. 即使犧牲自己，也要重創對方", r:"韓秀賢"}, {t:"C. 思考如何透過合法手段制裁", r:"金敏秀"}, {t:"D. 用最冷靜的方式計算對方弱點", r:"戰術幕僚"}] },
+            { q: "Q5. 你覺得「正義」是什麼？", options: [{t:"A. 以暴制暴，親手執行", r:"羅華鎮"}, {t:"B. 公眾輿論的審判", r:"李志赫"}, {t:"C. 法律與體制的完美運行", r:"金敏秀"}, {t:"D. 贏家的權利", r:"權校長"}] },
+            { q: "Q6. 對於「誠實」，你怎麼看？", options: [{t:"A. 最重要的品質", r:"金敏秀"}, {t:"B. 弱者的謊言", r:"權校長"}, {t:"C. 有用的情報來源", r:"李志赫"}, {t:"D. 活著的代價", r:"覺醒者"}] },
+            { q: "Q7. 當你的朋友背叛了你，你會？", options: [{t:"A. 徹底消失在他的世界", r:"旁觀者"}, {t:"B. 讓他在所有圈子裡混不下去", r:"李志赫"}, {t:"C. 找機會給他狠狠的教訓", r:"羅華鎮"}, {t:"D. 分析他為何背叛，並利用他的愧疚", r:"牆頭草"}] },
+            { q: "Q8. 看到韓秀賢這種因痛苦而瘋狂的角色，你會有什麼感覺？", options: [{t:"A. 同情，因為我也是這麼過來的", r:"覺醒者"}, {t:"B. 憤怒，他破壞了秩序", r:"羅華鎮"}, {t:"C. 恐懼，他會毀了一切", r:"旁觀者"}, {t:"D. 悲哀，這就是腐敗的產物", r:"金敏秀"}] },
+            { q: "Q9. 你最無法忍受什麼樣的人？", options: [{t:"A. 傲慢自大的當權者", r:"韓秀賢"}, {t:"B. 毫無主見的牆頭草", r:"羅華鎮"}, {t:"C. 過於理想化的天真者", r:"權校長"}, {t:"D. 虛偽造假的網紅", r:"李志赫"}] },
+            { q: "Q10. 如果可以改變學校的一項規則，你会改什麼？", options: [{t:"A. 強制刪除所有校園霸凌紀錄", r:"權校長"}, {t:"B. 建立匿名舉報與審判系統", r:"李志赫"}, {t:"C. 加重對霸凌者身體刑罰", r:"羅華鎮"}, {t:"D. 完全廢除階級制度", r:"金敏秀"}] },
+            { q: "Q11. 在一個漆黑的深夜，你獨自走在校園，你感受到的是？", options: [{t:"A. 潛在的危險與緊張", r:"羅華鎮"}, {t:"B. 無盡的壓抑與絕望", r:"韓秀賢"}, {t:"C. 充滿機會與陰謀的氛圍", r:"權校長"}, {t:"D. 這裡應該要有一場改革", r:"金敏秀"}] },
+            { q: "Q12. 對你而言，最好的結局是什麼？", options: [{t:"A. 摧毀一切，回歸虛無", r:"韓秀賢"}, {t:"B. 站在權力頂峰", r:"權校長"}, {t:"C. 世界變得更加平等", r:"金敏秀"}, {t:"D. 沒有霸凌，絕對秩序", r:"羅華鎮"}] }
+        ];
+
+        let scores = {}, currentQ = 0;
+        let myChart = null;
+        let audioEnabled = true; 
+        let audioCtx = null;
+
+        function initAudio() {
+            if (!audioCtx) {
+                audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+            }
+            if (audioCtx.state === 'suspended') {
+                audioCtx.resume();
+            }
+        }
+
+        function toggleAudio() {
+            audioEnabled = !audioEnabled;
+            const btn = document.getElementById('audio-toggle');
+            if (audioEnabled) {
+                btn.innerText = "系統音效：已開啟 🔊";
+                btn.classList.remove('text-zinc-500', 'border-zinc-700');
+                btn.classList.add('text-emerald-400', 'border-emerald-500');
+                initAudio();
+            } else {
+                btn.innerText = "系統音效：已靜音 🔇";
+                btn.classList.remove('text-emerald-400', 'border-emerald-500');
+                btn.classList.add('text-zinc-500', 'border-zinc-700');
+            }
+        }
+
+        function playSound(type) {
+            if (!audioEnabled) return;
+            initAudio();
+            if (!audioCtx) return;
+            
+            const osc = audioCtx.createOscillator();
+            const gain = audioCtx.createGain();
+            osc.connect(gain);
+            gain.connect(audioCtx.destination);
+
+            const now = audioCtx.currentTime;
+
+            if (type === 'click') {
+                osc.type = 'sine';
+                osc.frequency.setValueAtTime(880, now); 
+                gain.gain.setValueAtTime(0.1, now);
+                gain.gain.exponentialRampToValueAtTime(0.001, now + 0.1);
+                osc.start(now);
+                osc.stop(now + 0.1);
+            } else if (type === 'result') {
+                osc.type = 'sawtooth';
+                osc.frequency.setValueAtTime(150, now);
+                osc.frequency.linearRampToValueAtTime(400, now + 0.4);
+                gain.gain.setValueAtTime(0.08, now);
+                gain.gain.exponentialRampToValueAtTime(0.001, now + 0.4);
+                osc.start(now);
+                osc.stop(now + 0.4);
+
+                setTimeout(() => {
+                    const osc2 = audioCtx.createOscillator();
+                    const gain2 = audioCtx.createGain();
+                    osc2.connect(gain2);
+                    gain2.connect(audioCtx.destination);
+                    osc2.type = 'sine';
+                    osc2.frequency.setValueAtTime(1200, audioCtx.currentTime);
+                    gain2.gain.setValueAtTime(0.05, audioCtx.currentTime);
+                    gain2.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.5);
+                    osc2.start();
+                    osc2.stop(audioCtx.currentTime + 0.5);
+                }, 400);
+            }
+        }
+
+        function startQuiz() { 
+            initAudio(); 
+            playSound('click');
+            document.getElementById('landing-page').classList.add('hidden'); 
+            document.getElementById('quiz-container').classList.remove('hidden'); 
+            loadQuestion(); 
+        }
+
+        function resetQuiz() { 
+            playSound('click');
+            scores = {}; 
+            currentQ = 0; 
+            if(myChart) { myChart.destroy(); myChart = null; }
+            document.getElementById('result-box').classList.add('hidden'); 
+            document.getElementById('question-box').classList.remove('hidden'); 
+            loadQuestion(); 
+        }
+        
+        function loadQuestion() {
+            if(currentQ >= quizData.length) return showResult();
+            
+            const qBox = document.getElementById('question-box');
+            qBox.classList.remove('crt-flash');
+            void qBox.offsetWidth; 
+            qBox.classList.add('crt-flash');
+
+            const q = quizData[currentQ];
+            const p = Math.round((currentQ / quizData.length) * 100);
+            
+            document.getElementById('progress-text').innerText = `${p}%`;
+            const bar = document.getElementById('scan-bar');
+            bar.style.width = `${p}%`;
+            
+            if(p < 35) {
+                bar.className = "h-full bg-emerald-600 transition-all duration-500 ease-in-out";
+            } else if(p < 75) {
+                bar.className = "h-full bg-yellow-600 transition-all duration-500 ease-in-out";
+            } else {
+                bar.className = "h-full bg-red-700 transition-all duration-500 ease-in-out";
+            }
+
+            document.getElementById('question-text').innerText = q.q;
+            const box = document.getElementById('options-box'); 
+            box.innerHTML = '';
+            
+            q.options.forEach(opt => {
+                const btn = document.createElement('button');
+                btn.className = "w-full text-left p-4 border border-zinc-800 hover:border-red-700 hover:bg-zinc-900 transition-all text-[14px] bg-[#0c0c0c] text-zinc-300 btn-glow";
+                btn.innerText = opt.t;
+                btn.onclick = () => { 
+                    playSound('click');
+                    scores[opt.r] = (scores[opt.r] || 0) + 1; 
+                    currentQ++; 
+                    loadQuestion(); 
+                };
+                box.appendChild(btn);
+            });
+        }
+
+        function showResult() {
+            playSound('result');
+            document.getElementById('question-box').classList.add('hidden');
+            document.getElementById('result-box').classList.remove('hidden');
+            
+            const winner = Object.keys(scores).reduce((a, b) => (scores[a] || 0) > (scores[b] || 0) ? a : b, "旁觀者");
+            
+            const profiles = {
+                "覺醒者": {
+                    desc: "審判結果顯示，你在深淵中仍試圖點燃微弱的火光。這種人性是體制眼中的『變數』，也是唯一的救贖。但請記住，火光往往最先引來殺機。",
+                    tag: "抗體基因 // Anomalous",
+                    danger: "LEVEL: HIGH (高危)",
+                    dangerClass: "bg-orange-950 text-orange-400 border border-orange-700",
+                    link: "與「金敏秀」結盟，將理想轉化為實質改變。",
+                    threadsShare: "6.8%",
+                    chartData: [85, 75, 60, 65, 80]
+                },
+                "李志赫": {
+                    desc: "你將憤怒內化為精密的佈局。對你而言，沒有絕對的正義，只有誰能把真相操弄得更精準。這是一種危險的才華，歡迎加入暗處的角力。",
+                    tag: "情報毒蜂 // Information",
+                    danger: "LEVEL: MEDIUM (中危)",
+                    dangerClass: "bg-yellow-950 text-yellow-400 border border-yellow-700",
+                    link: "尋找「戰術幕僚」，你們的複合佈局將無懈可擊。",
+                    threadsShare: "12.5%",
+                    chartData: [40, 65, 80, 85, 50]
+                },
+                "旁觀者": {
+                    desc: "報告顯示你正精確地閃避所有衝擊。在這場鐵拳教育中，冷漠是你的護身符。但當鐵拳真正揮向你時，你會發現，旁觀者從來沒有真正的避風港。",
+                    tag: "灰色背景 // Neutral",
+                    danger: "LEVEL: SAFE (安全)",
+                    dangerClass: "bg-zinc-900 text-zinc-400 border border-zinc-700",
+                    link: "警惕「牆頭草」的煽動，保持你最後的清醒。",
+                    threadsShare: "28.4%",
+                    chartData: [60, 20, 70, 75, 40]
+                },
+                "牆頭草": {
+                    desc: "你具備極高的環境適應能力。在權力轉移的瞬間，你總能站在獲勝的一方。這種生存本能是頂級的，但你靈魂的根基，早已在多次變節中風化。",
+                    tag: "擬態生物 // Mimicry",
+                    danger: "LEVEL: LOW (低危)",
+                    dangerClass: "bg-green-950 text-green-400 border border-green-700",
+                    link: "切勿單逐面對「韓秀賢」，你無法承受極端的瘋狂。",
+                    threadsShare: "18.1%",
+                    chartData: [30, 45, 95, 50, 30]
+                },
+                "羅華鎮": {
+                    desc: "對秩序與暴力的絕對信仰，讓你的行動力遠超常人。你是體制最鋒利的刀刃，但當刀刃失去控制，第一個被銷毀的，往往就是最鋒利的那把。",
+                    tag: "執行鐵腕 // Enforcer",
+                    danger: "LEVEL: CRITICAL (極危)",
+                    dangerClass: "bg-red-950 text-red-400 border border-red-700",
+                    link: "成為「權校長」的終極制裁，或者成為摧毀其體制的引信。",
+                    threadsShare: "9.3%",
+                    chartData: [95, 90, 55, 80, 20]
+                },
+                "金敏秀": {
+                    desc: "你試圖在腐朽的架構上縫補正義。這是最高尚的自殺。你的理想主義是這裡最稀缺的資源，但也最容易成為體制崩塌時的陪葬品。",
+                    tag: "體制補丁 // Reformer",
+                    danger: "LEVEL: MEDIUM (中危)",
+                    dangerClass: "bg-yellow-950 text-yellow-400 border border-yellow-700",
+                    link: "庇護「覺醒者」，他是你理想落地所需的火種。",
+                    threadsShare: "15.2%",
+                    chartData: [90, 40, 50, 70, 90]
+                },
+                "權校長": {
+                    desc: "你已徹底洞悉了遊戲規則：勝者定義真實。你不再受到道德的束縛，你本身就是規則的制定者。這是一條孤獨的路，但也擁有絕對的控制權。",
+                    tag: "支配核心 // Monarch",
+                    danger: "LEVEL: OVERLORD (封鎖級)",
+                    dangerClass: "bg-purple-950 text-purple-400 border border-purple-700",
+                    link: "高度控管「羅華鎮」，失控的惡犬終會噬主。",
+                    threadsShare: "4.5%",
+                    chartData: [95, 85, 85, 90, 10]
+                },
+                "韓秀賢": {
+                    desc: "你體內的憤怒已達臨界點。這不是情緒，這是對現存世界觀的全面否定。你註定是毀滅的執行者，你的存在本身，就是對這所學校最大的挑釁。",
+                    tag: "深淵碎屑 // Collapse",
+                    danger: "LEVEL: CALAMITY (毀滅級)",
+                    dangerClass: "bg-red-600 text-white border border-red-500 font-black",
+                    link: "與「李志赫」交換底牌，用雙重毀滅撕裂黑幕。",
+                    threadsShare: "3.2%",
+                    chartData: [10, 98, 40, 45, 60]
+                },
+                "戰術幕僚": {
+                    desc: "你眼中的世界是一組數據，沒有善惡，只有損益比。你冷靜地分析每個人的弱點並加以利用。在鐵拳教育中，你是最難被捕捉，但也最令人忌憚的存在。",
+                    tag: "冷血矩陣 // Architect",
+                    danger: "LEVEL: HIGH (高危)",
+                    dangerClass: "bg-orange-950 text-orange-400 border border-orange-700",
+                    link: "在背後操縱「權校長」的決策，將體制化為你的沙盒。",
+                    threadsShare: "5.5%",
+                    chartData: [50, 70, 85, 95, 20]
+                }
+            };
+
+            const data = profiles[winner] || profiles["旁觀者"];
+
+            document.getElementById('result-title').innerText = winner;
+            document.getElementById('result-desc').innerText = data.desc;
+            document.getElementById('alignment-label').innerText = data.tag;
+            
+            const dangerEl = document.getElementById('danger-label');
+            dangerEl.innerText = data.danger;
+            dangerEl.className = `text-[10px] px-2 py-0.5 uppercase font-bold tracking-wider ${data.dangerClass}`;
+            
+            document.getElementById('threads-percentage').innerText = data.threadsShare;
+            document.getElementById('destiny-link-text').innerText = data.link;
+
+            const ctx = document.getElementById('radarChart').getContext('2d');
+            myChart = new Chart(ctx, {
+                type: 'radar',
+                data: {
+                    labels: ['秩序傾向', '破壞力', '環境適應', '冷靜程度', '核心人性'],
+                    datasets: [{
+                        label: '精神特質評估',
+                        data: data.chartData,
+                        backgroundColor: 'rgba(185, 28, 28, 0.15)',
+                        borderColor: '#b91c1c',
+                        borderWidth: 2,
+                        pointBackgroundColor: '#ffffff',
+                        pointBorderColor: '#b91c1c',
+                        pointRadius: 3
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { display: false }
+                    },
+                    scales: {
+                        r: {
+                            min: 0,
+                            max: 100,
+                            ticks: { display: false, stepSize: 25 },
+                            grid: { color: '#222222' },
+                            angleLines: { color: '#333333' },
+                            pointLabels: {
+                                color: '#a1a1aa',
+                                font: { size: 10, family: 'Courier Prime' }
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+        async function saveAndRedirect() {
+            playSound('click');
+            const el = document.getElementById("capture-area");
+            
+            const canvas = await html2canvas(el, { 
+                backgroundColor: "#050505",
+                useCORS: true,
+                allowTaint: true
+            });
+            
+            const link = document.createElement("a");
+            link.download = "iron-fist-judgment.png";
+            link.href = canvas.toDataURL("image/png");
+            link.click();
+            setTimeout(() => { 
+                window.location.href = "https://s.shopee.tw/70Hnm7rQGp"; 
+            }, 500);
+        }
+    </script>
+</body>
+</html>
