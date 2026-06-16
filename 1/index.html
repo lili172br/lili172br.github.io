@@ -214,7 +214,7 @@
             { type: "S", aScore: "Se", bScore: "Si", text: "關於生活或工作的「大方向改變」（例如換工作、搬家），你更符合哪種？", aText: "遇到機會就先衝了再說，計畫趕不上變化，船到橋頭自然直。", bText: "必須做好全面的心理準備和儲蓄計畫，不然會極度沒有安全感。" },
             { type: "N", aScore: "Ni", bScore: "Ne", text: "突然被主管或老師在工作群組單獨 @ (艾特)，你的第一直覺是？", aText: "慘了，我是不是做錯什麼事？大腦自動腦補出各種最壞狀況。", bText: "煩死了又有什麼事？手頭的事情先做完，等一下再點開。" },
             { type: "N", aScore: "Ne", bScore: "Ni", text: "你平常使用手機、滑社群的真實狀態更接近哪一種？", aText: "注意力很難集中，同時開好幾個視窗或 App 換來換去，但都沒看完。", bText: "看到有興趣的主題就會瘋狂往下挖，不知不覺看完整個八卦懶人包。" },
-            { type: "N", aScore: "Ne", bScore: "Ni", text: "看到別人發了一篇語氣很酸、但沒有指名道姓的「黑名單抱怨文」，你會？", aText: "覺得跟自己無關，純粹當成別人的生活碎念，看過就忘。", bText: "開始對號入座，懷疑對方是不是在暗諷自己，或瘋狂猜測他在罵誰。" }
+            { type: "N", aScore: "Ne", bScore: "Ni", text: "看到別人發了一篇語氣很酸、但沒有指名道姓的「黑名單抱怨文」，你會？", aText: "覺得跟自己無關，純粹當成別人的生活碎念，看過就忘。", bText: "開始對號入座，懷疑對方是不是在暗諷自己，校正回歸。" }
         ];
 
         const results = {
@@ -228,15 +228,22 @@
         let userScores = { Ti: 0, Te: 0, Fi: 0, Fe: 0, Si: 0, Se: 0, Ni: 0, Ne: 0 };
         
         // ==========================================
-        // 科技感 Web Audio API 音效合成引擎
+        // 科技感 Web Audio API 音效合成引擎 (已加入安全降級保護)
         // ==========================================
         let audioCtx = null;
 
         function playClickSound(type = 'default') {
             try {
-                // 初始化 AudioContext（瀏覽器規定必須由使用者點擊觸發才能初始化）
+                // 如果環境封鎖了 AudioContext，直接優雅跳出，不阻斷後續程式碼執行
+                if (!window.AudioContext && !window.webkitAudioContext) return;
+                
                 if (!audioCtx) {
                     audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+                }
+                
+                // 檢查是否處於被掛起 (suspended) 狀態，如果是，嘗試重啟
+                if (audioCtx.state === 'suspended') {
+                    audioCtx.resume();
                 }
                 
                 const osc = audioCtx.createOscillator();
@@ -248,16 +255,14 @@
                 const now = audioCtx.currentTime;
                 
                 if (type === 'special') {
-                    // 「進入測驗」或「產生截圖」的高級複合音效 (嗶嗶兩聲)
                     osc.type = 'sine';
-                    osc.frequency.setValueAtTime(587.33, now); // D5
-                    osc.frequency.setValueAtTime(880, now + 0.08); // A5
+                    osc.frequency.setValueAtTime(587.33, now); 
+                    osc.frequency.setValueAtTime(880, now + 0.08); 
                     gain.gain.setValueAtTime(0.15, now);
                     gain.gain.exponentialRampToValueAtTime(0.001, now + 0.25);
                     osc.start(now);
                     osc.stop(now + 0.25);
                 } else if (type === 'reset') {
-                    // 「再測一次」的下行音效
                     osc.type = 'triangle';
                     osc.frequency.setValueAtTime(440, now);
                     osc.frequency.exponentialRampToValueAtTime(220, now + 0.2);
@@ -266,23 +271,26 @@
                     osc.start(now);
                     osc.stop(now + 0.2);
                 } else {
-                    // 普通選項按鈕：清脆爽快的短切音
                     osc.type = 'sine';
-                    osc.frequency.setValueAtTime(800, now); // 啟始高頻
-                    osc.frequency.exponentialRampToValueAtTime(400, now + 0.05); // 快速下滑
+                    osc.frequency.setValueAtTime(800, now); 
+                    osc.frequency.exponentialRampToValueAtTime(400, now + 0.05); 
                     gain.gain.setValueAtTime(0.1, now);
-                    gain.gain.exponentialRampToValueAtTime(0.001, now + 0.06); // 極短衰減
+                    gain.gain.exponentialRampToValueAtTime(0.001, now + 0.06); 
                     osc.start(now);
                     osc.stop(now + 0.06);
                 }
             } catch (e) {
-                console.log("AudioContext blocked or not supported.");
+                // 靜默捕獲任何音訊錯誤，確保主程式不受影響
+                console.warn("AudioContext blocked or bypassed safely.");
             }
         }
 
         // 切換到測驗畫面
         function activateQuizStage() {
+            // 先播放音效（失敗也會被 catch 擋住）
             playClickSound('special');
+            
+            // 核心狀態變更：強制執行，不受音效影響
             document.getElementById("landing-stage").style.display = "none";
             document.getElementById("quiz-stage").style.display = "block";
             renderQuestion();
