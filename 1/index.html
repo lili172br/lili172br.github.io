@@ -67,6 +67,7 @@
 
     <div class="max-w-xl w-full mx-auto space-y-6 my-auto">
         
+        <!-- 進入首頁舞台 -->
         <div id="landing-stage" class="space-y-6">
             <header class="text-center border-b border-zinc-900 pb-6">
                 <h1 class="text-xl font-bold tracking-wider text-white mb-2">心理學特展：社群陰暗面研究</h1>
@@ -80,7 +81,8 @@
                 <p class="text-xs text-zinc-400 leading-relaxed max-w-sm mx-auto">
                     12 道直覺二選一情境題，解構你隱藏在螢幕背後的潛意識面具。
                 </p>
-                <button id="start-quiz-btn" class="btn-action inline-block bg-white text-black font-bold text-xs tracking-widest px-8 py-3.5 rounded-full hover:scale-105">
+                <!-- 🛠️ 已修正：直接將點擊事件寫在標籤上，確保 100% 觸發 -->
+                <button id="start-quiz-btn" onclick="activateQuizStage()" class="btn-action inline-block bg-white text-black font-bold text-xs tracking-widest px-8 py-3.5 rounded-full hover:scale-105 cursor-pointer">
                     立即進入完整測驗 →
                 </button>
             </section>
@@ -118,6 +120,7 @@
             </footer>
         </div>
 
+        <!-- 測驗舞台 -->
         <div id="quiz-stage" class="cyber-panel border border-zinc-800 rounded-2xl p-6 space-y-6 hidden shadow-2xl">
             <div class="w-full bg-zinc-900 h-1.5 rounded-full overflow-hidden">
                 <div id="progress-bar" class="h-full bg-emerald-500 w-0% transition-all duration-300"></div>
@@ -129,11 +132,12 @@
             </div>
 
             <div class="flex flex-col gap-3.5">
-                <button id="opt-A" onclick="handleOptionSelection('A')" class="option-btn text-xs text-left text-zinc-300 p-4 rounded-xl leading-relaxed"></button>
-                <button id="opt-B" onclick="handleOptionSelection('B')" class="option-btn text-xs text-left text-zinc-300 p-4 rounded-xl leading-relaxed"></button>
+                <button id="opt-A" onclick="handleOptionSelection('A')" class="option-btn text-xs text-left text-zinc-300 p-4 rounded-xl leading-relaxed cursor-pointer"></button>
+                <button id="opt-B" onclick="handleOptionSelection('B')" class="option-btn text-xs text-left text-zinc-300 p-4 rounded-xl leading-relaxed cursor-pointer"></button>
             </div>
         </div>
 
+        <!-- 結果舞台 -->
         <div id="result-stage" class="space-y-5 hidden">
             <div id="capture-area" class="bg-[#0c0c0c] border-2 border-emerald-500 rounded-2xl p-6 text-center space-y-5 shadow-2xl">
                 <div class="text-[9px] text-emerald-400 font-bold tracking-[0.3em] uppercase">MY SHADOW TYPE // 鑑定報告</div>
@@ -166,10 +170,10 @@
             </div>
 
             <div class="grid grid-cols-2 gap-3">
-                <button onclick="resetEvaluation()" class="btn-action w-full bg-zinc-900 border border-zinc-800 text-zinc-300 font-bold text-xs tracking-widest py-3.5 rounded-full hover:bg-zinc-800">
+                <button onclick="resetEvaluation()" class="btn-action w-full bg-zinc-900 border border-zinc-800 text-zinc-300 font-bold text-xs tracking-widest py-3.5 rounded-full hover:bg-zinc-800 cursor-pointer">
                     再測一次
                 </button>
-                <button onclick="generateSnapshotAndNavigate()" class="btn-action w-full bg-emerald-500 text-black font-bold text-xs tracking-widest py-3.5 rounded-full hover:shadow-[0_0_15px_rgba(16,185,129,0.4)]">
+                <button onclick="generateSnapshotAndNavigate()" class="btn-action w-full bg-emerald-500 text-black font-bold text-xs tracking-widest py-3.5 rounded-full hover:shadow-[0_0_15px_rgba(16,185,129,0.4)] cursor-pointer">
                     儲存結果
                 </button>
             </div>
@@ -250,6 +254,7 @@
             }
         }
 
+        // 🛠️ 已簡化：純粹切換介面並直接渲染第一題
         function activateQuizStage() {
             playClickSound('special');
             
@@ -259,21 +264,9 @@
             if (landing && quiz) {
                 landing.style.display = "none";
                 quiz.style.display = "block";
+                currentQuestion = 0; // 重設題號確保安全
                 renderQuestion();
             }
-        }
-        
-        document.addEventListener("DOMContentLoaded", function() {
-            const startBtn = document.getElementById("start-quiz-btn");
-            if (startBtn) {
-                startBtn.removeEventListener("click", activateQuizStage);
-                startBtn.addEventListener("click", activateQuizStage);
-            }
-        });
-
-        if (document.readyState === "complete" || document.readyState === "interactive") {
-            const startBtn = document.getElementById("start-quiz-btn");
-            if (startBtn) startBtn.addEventListener("click", activateQuizStage);
         }
 
         function renderQuestion() { 
