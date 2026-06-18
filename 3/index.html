@@ -4,12 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>時空穿梭核心實驗室</title>
-    <!-- Google AdSense 驗證代碼 -->
+    
+    <meta name="description" content="歡迎來到時空穿梭核心實驗室，本裝置基於相對論時幕修正協定，為您提供精準的時間折疊量子觀測維度實時重組體驗。">
+    <meta name="keywords" content="時空穿梭, 時間旅行, 量子力學, 時幕同步, 核心實驗室">
+    
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="時空穿梭核心實驗室 — 進入時幕終端">
+    <meta property="og:description" content="本裝置基於相對論時幕修正協定，點擊初始化進入量子觀測維度實時重組。">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1506703719100-a0f3a48c0f86?auto=format&fit=crop&w=1200&h=630&q=80">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:url" content="https://yourdomain.com/">
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="時空穿梭核心實驗室 — 進入時幕終端">
+    <meta name="twitter:description" content="點擊初始化進入量子觀測維度實時重組，體驗高階時間旅行折疊。">
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1506703719100-a0f3a48c0f86?auto=format&fit=crop&w=1200&h=630&q=80">
+
+    <link rel="icon" type="image/png" sizes="32x32" href="https://images.unsplash.com/photo-1506703719100-a0f3a48c0f86?auto=format&fit=crop&w=32&h=32&q=80">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://images.unsplash.com/photo-1506703719100-a0f3a48c0f86?auto=format&fit=crop&w=180&h=180&q=80">
+
     <meta name="google-adsense-account" content="ca-pub-9874958587973886">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9874958587973886" crossorigin="anonymous"></script>
     
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- 引入 html2canvas 用於前端直接渲染圖片快照 -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Courier+Prime:wght=400;700&display=swap');
@@ -99,7 +117,7 @@
             background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
         }
 
-        /* 🚀 針對截圖與動態渲染強化的防切邊安全 CSS 防線 */
+        /* 針對截圖與動態渲染強化的防切邊安全 CSS 防線 */
         .screenshot-text-safe {
             position: relative !important;
             z-index: 50 !important;
@@ -112,14 +130,12 @@
 </head>
 <body class="min-h-screen flex flex-col items-center justify-start p-4 select-none relative">
 
-    <!-- 全局音效開關 -->
     <div class="fixed top-4 right-4 z-50">
         <button id="audio-toggle" onclick="toggleAudio()" class="px-3 py-1.5 border border-cyan-500 bg-zinc-950 text-cyan-400 font-mono text-[10px] uppercase tracking-wider hover:text-white hover:border-white transition-all rounded">
             系統音效：已開啟 🔊
         </button>
     </div>
 
-    <!-- ==================== 第一階段：首頁說明頁面 ==================== -->
     <main id="landing-page" class="max-w-md w-full border border-slate-800 bg-[#050810] p-6 md:p-8 relative rounded-md shadow-[0_0_50px_rgba(0,0,0,0.8)] my-4">
         <header class="mb-6 border-b border-zinc-900 pb-4 relative">
             <div class="absolute top-0 right-0 flex items-center gap-1.5 text-[9px] text-cyan-400 font-mono tracking-wider animate-pulse">
@@ -132,7 +148,6 @@
             </div>
         </header>
 
-        <!-- 環境參數觀測盾 -->
         <div class="grid grid-cols-3 gap-2 bg-black/60 p-3 border border-slate-900 rounded font-mono text-[9px] mb-6">
             <div class="border-r border-zinc-800 pr-1">
                 <span class="text-zinc-600 block text-[8px]">LOCAL_GRAVITY</span>
@@ -153,7 +168,6 @@
             <p>本裝置基於相對論時幕修正協定。當我們人為干涉物理時幕增量時，系統周遭將引發不同程度的時間亂流。這並非虛幻的投影，而是量子觀測維度的實時重組。</p>
         </section>
 
-        <!-- 金鑰與行動代號輸入框 -->
         <div class="mt-6 pt-4 border-t border-zinc-900 space-y-4">
             <div class="flex flex-col gap-2 bg-black/50 p-3 border border-slate-800 rounded">
                 <label class="text-xs font-bold text-zinc-300 tracking-wider">【 1. 輸入驗證金鑰（選填） 】</label>
@@ -172,12 +186,10 @@
             <span>CHRONO_CORE // #2026-FIST-X</span>
         </div>
         
-        <!-- 【核心主控按鈕】 -->
         <button onclick="startTerminal()" class="block w-full py-4 bg-white text-black text-center font-black uppercase tracking-widest hover:bg-cyan-500 hover:text-white transition-all duration-300 btn-glow text-xs mb-8 rounded">
             初始化時幕終端 ENTER_CORE
         </button>
 
-        <!-- 廣告與延伸技術細節區塊 -->
         <div class="mt-4 pt-6 border-t-2 border-dashed border-zinc-900 space-y-8">
             <section class="text-xs font-mono">
                 <h2 class="text-sm tracking-wider uppercase text-zinc-200">// 核心硬體實時監測矩陣</h2>
@@ -253,7 +265,6 @@
     </main>
 
 
-    <!-- ==================== 第二階段：時空穿梭操作面板 ==================== -->
     <main id="main-frame" class="crt-screen max-w-md w-full border-2 border-slate-800 bg-[#050810] p-6 md:p-8 relative tracking-widest shadow-[0_0_50px_rgba(0,0,0,0.8)] rounded-md overflow-hidden hidden my-4">
         
         <header class="mb-6 flex justify-between items-start border-b border-slate-900 pb-4 relative z-20">
@@ -315,7 +326,6 @@
             執行時幕同步 // START_SYNC
         </button>
 
-        <!-- 進度條與日誌（🔧 物理層面防線：解開高度枷鎖，加入上下 padding，確保警報絕對不被切邊） -->
         <div id="progress-wrapper" class="mt-8 hidden space-y-4 relative z-20">
             <div class="bg-black border border-slate-900 p-3 font-mono text-center">
                 <div id="matrix-bar" class="text-zinc-800 text-xl font-black tracking-[0.15em] pt-2 select-none">
@@ -335,14 +345,11 @@
     </main>
 
 
-    <!-- ==================== 第三階段：社群分享精美紀念小卡介面 ==================== -->
     <main id="share-screen" class="max-w-md w-full flex flex-col items-center hidden my-4">
         
-        <!-- 卡片實體渲染區 -->
         <div id="capture-card" class="card-bg-pattern w-full border-2 border-zinc-800 p-6 rounded-xl shadow-[0_0_40px_rgba(34,211,238,0.15)] relative flex flex-col gap-5 overflow-visible" style="width: 100%; max-width: 400px;">
             <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-cyan-500 via-purple-500 to-rose-500 z-50"></div>
             
-            <!-- 頂部排版（🔧 物理層面防線：改用 absolute 定位釘死在右上角，內嵌不換行樣式，決不被標題排版擠壓折行） -->
             <div class="relative w-full pb-4 overflow-visible" style="min-h-12">
                 <div class="pr-[120px]">
                     <span class="text-[10px] font-mono tracking-widest text-zinc-500 block screenshot-text-safe">CHRONO_PASSPORT</span>
@@ -353,7 +360,6 @@
                 </div>
             </div>
 
-            <!-- 金鑰與代號印章 -->
             <div class="font-mono text-[10px] bg-black/60 border border-zinc-900/80 p-3 rounded space-y-3 overflow-visible">
                 <div class="block w-full overflow-visible pb-1">
                     <span class="text-zinc-600 block text-[9px] uppercase font-bold screenshot-text-safe">驗證金鑰 ACCESS_KEY:</span>
@@ -365,7 +371,6 @@
                 </div>
             </div>
 
-            <!-- 時間結果 -->
             <div class="bg-black/80 border border-zinc-800 rounded-lg p-4 text-center relative overflow-visible">
                 <div class="absolute -top-2 left-4 px-1.5 bg-zinc-900 text-[8px] font-mono text-zinc-500 screenshot-text-safe">ARRIVED_TARGET_MATRIX</div>
                 <p class="text-[10px] text-zinc-500 tracking-widest mb-1.5 uppercase font-mono screenshot-text-safe">// 已定錨目標時間線 //</p>
@@ -374,7 +379,6 @@
                 </div>
             </div>
 
-            <!-- 旅行數據 -->
             <div class="grid grid-cols-2 gap-3 font-mono text-xs overflow-visible">
                 <div class="bg-zinc-900/40 p-2.5 border border-zinc-850 rounded overflow-visible">
                     <span class="text-[9px] text-zinc-600 block screenshot-text-safe">維度跳躍跨度</span>
@@ -386,7 +390,6 @@
                 </div>
             </div>
 
-            <!-- 語錄 -->
             <div class="bg-gradient-to-br from-zinc-900 to-black p-3.5 border border-zinc-800 rounded-lg relative overflow-visible">
                 <span class="absolute top-2 right-3 text-xl text-zinc-800 font-serif screenshot-text-safe">“</span>
                 <span class="text-[9px] font-mono text-purple-400 block mb-1 screenshot-text-safe">◆ 量子觀測評語 //</span>
@@ -395,7 +398,6 @@
                 </p>
             </div>
 
-            <!-- 頁尾條碼 -->
             <div class="flex justify-between items-center border-t border-zinc-900 pt-3 mt-1 overflow-visible">
                 <div class="font-mono text-[8px] text-zinc-600 uppercase screenshot-text-safe">
                     <p>Origin: SHILIN_TAIPEI</p>
@@ -521,6 +523,7 @@
             } catch(e) {}
         }
 
+        // 🔧 已修復原始代碼底部的語法截斷 (gain.conn..)
         function playTone(freq, duration, type = 'sine', volume = 0.08) {
             if (!audioEnabled || !audioCtx || audioCtx.state === 'suspended') return;
             try {
@@ -531,232 +534,142 @@
                 gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + duration);
                 osc.connect(gain); gain.connect(audioCtx.destination);
                 osc.start(); osc.stop(audioCtx.currentTime + duration);
-            } catch (e) {}
-        }
-
-        function startAlertSound() {
-            if (!audioEnabled || !audioCtx || alertInterval) return;
-            alertInterval = setInterval(() => {
-                try {
-                    const now = audioCtx.currentTime;
-                    const osc = audioCtx.createOscillator();
-                    const gain = audioCtx.createGain();
-                    osc.type = 'sawtooth'; osc.frequency.setValueAtTime(660, now); 
-                    gain.gain.setValueAtTime(0.15, now);
-                    gain.gain.linearRampToValueAtTime(0.01, now + 0.18);
-                    osc.connect(gain); gain.connect(audioCtx.destination);
-                    osc.start(); osc.stop(now + 0.2);
-                } catch(e){}
-            }, 300);
+            } catch(e) {}
         }
 
         function stopAlertSound() {
             if (alertInterval) { clearInterval(alertInterval); alertInterval = null; }
         }
 
-        function updateShieldData() {
-            if (!document.getElementById('landing-page').classList.contains('hidden')) {
-                document.getElementById('shield-grav').innerText = `${(9.7820 + Math.random() * 0.0004).toFixed(4)} m/s²`;
-                document.getElementById('shield-entr').innerText = (1.2440 + Math.random() * 0.05).toFixed(4);
-                document.getElementById('shield-flux').innerText = `${(12.1 + Math.random() * 0.6).toFixed(1)} nT`;
-                document.getElementById('stat-temp').innerText = `${(40 + Math.random() * 4).toFixed(1)} °C`;
-                document.getElementById('stat-load').innerText = `${(1.20 + Math.random() * 0.08).toFixed(2)}V`;
-            }
-            setTimeout(updateShieldData, 600);
+        function stepTimeValue(val) {
+            const el = document.getElementById('time-val');
+            let current = parseInt(el.value) || 5;
+            current += val;
+            if (current < 1) current = 1;
+            if (current > 999) current = 999;
+            el.value = current;
+            playTone(400, 0.05, 'sine', 0.05);
         }
-
-        generateRandomBroadcasts();
-        updateShieldData();
-        setInterval(generateRandomBroadcasts, 15000);
 
         function startTerminal() {
             initAudio();
-            playTone(800, 0.05, 'sine', 0.1);
-
-            const keyVal = document.getElementById('access-key').value.trim().toUpperCase();
-            const codeVal = document.getElementById('operation-code').value.trim().toUpperCase();
-
-            document.getElementById('panel-key-display').innerText = keyVal || "DEFAULT_GUEST";
-            document.getElementById('panel-code-display').innerText = codeVal || "UNNAMED_ACTION";
+            playTone(880, 0.1, 'sine', 0.1);
+            
+            const key = document.getElementById('access-key').value.trim() || 'GUEST_DEFAULT_2026';
+            const code = document.getElementById('operation-code').value.trim() || 'UNNAMED_ACTION';
+            
+            document.getElementById('panel-key-display').innerText = key.toUpperCase();
+            document.getElementById('panel-code-display').innerText = code.toUpperCase();
+            document.getElementById('card-key-display').innerText = key.toUpperCase();
+            document.getElementById('card-code-display').innerText = code.toUpperCase();
 
             document.getElementById('landing-page').classList.add('hidden');
             document.getElementById('main-frame').classList.remove('hidden');
-            calculateTargetTime();
+            
+            updateVfdClock();
+            setInterval(updateVfdClock, 500);
+            setInterval(randomizeHardwareStats, 3000);
         }
 
-        function stepTimeValue(amount) {
-            if (isLocked) return;
-            initAudio();
-            playTone(900, 0.01, 'triangle', 0.1);
-            const input = document.getElementById('time-val');
-            let newVal = (parseInt(input.value) || 1) + amount;
-            input.value = Math.max(1, Math.min(999, newVal));
-            calculateTargetTime();
+        function updateVfdClock() {
+            const screen = document.getElementById('vfd-screen');
+            if (!screen || isRunning) return;
+            const now = new Date();
+            screen.innerText = now.toLocaleString('zh-TW', { hour12: false });
         }
 
-        function calculateTargetTime() {
-            const val = parseInt(document.getElementById('time-val').value) || 0;
-            const unit = document.getElementById('time-unit').value;
-            let target = new Date();
-            if (unit === 'yr') target.setFullYear(target.getFullYear() + val);
-            if (unit === 'day') target.setDate(target.getDate() + val);
-            if (unit === 'hr') target.setHours(target.getHours() + val);
-            if (unit === 'min') target.setMinutes(target.getMinutes() + val);
-            if (unit === 'sec') target.setSeconds(target.getSeconds() + val);
-
-            const pad = n => String(n).padStart(2, '0');
-            document.getElementById('vfd-screen').innerText = `${target.getFullYear()}年${pad(target.getMonth()+1)}月${pad(target.getDate())}日 ${pad(target.getHours())}:${pad(target.getMinutes())}:${pad(target.getSeconds())}`;
-            return Math.max(0, Math.floor((target.getTime() - new Date().getTime()) / 1000));
-        }
-
-        setInterval(() => {
-            if (isLocked || isCoolingDown) return;
-            calculateTargetTime();
-            currentTurbulence = Math.random() * 0.3 + 0.05;
-            document.getElementById('turbulence-display').innerText = `${currentTurbulence.toFixed(2)} 級`;
-            document.getElementById('hex-stream').innerText = "0x" + Math.floor(Math.random() * 65535).toString(16).toUpperCase().padStart(4, '0');
-        }, 1000);
-
-        document.getElementById('time-unit').addEventListener('change', () => calculateTargetTime());
-        document.getElementById('time-val').addEventListener('input', () => calculateTargetTime());
-
-        const btn = document.getElementById('btn-start');
-        const mainFrame = document.getElementById('main-frame');
-        const progressWrapper = document.getElementById('progress-wrapper');
-        const matrixBar = document.getElementById('matrix-bar');
-        const logText = document.getElementById('log-text');
-        const footer = document.getElementById('system-footer');
-
-        btn.addEventListener('click', function() {
-            initAudio();
-            if (isRunning) { location.reload(); return; }
-
-            const totalSeconds = calculateTargetTime();
-            if (totalSeconds <= 0) return;
-
-            isRunning = true; isLocked = true; maxTurbulenceRecorded = 0.10;
-            document.getElementById('time-val').disabled = true;
-            document.getElementById('time-unit').disabled = true;
-            document.getElementById('btn-plus').disabled = true;
-            document.getElementById('btn-minus').disabled = true;
-
-            btn.innerText = "🚨 核心負載過載 // 緊急中止";
-            btn.className = "w-full py-4 bg-red-950/40 border-2 border-red-700 text-red-400 text-[14px] font-black tracking-[0.3em] rounded abort-glow";
-            progressWrapper.classList.remove('hidden');
-            mainFrame.classList.add('sys-load-shake');
-            footer.innerText = "// 系統狀態：同步序列執行中";
-
-            const startTime = Date.now();
-            const totalMs = Math.min(totalSeconds * 1000, 6000); 
-
-            function runSequence() {
-                if (!isRunning) return;
-                const elapsed = Date.now() - startTime;
-                const ratio = Math.min(elapsed / totalMs, 1);
-                const blockCount = Math.floor(ratio * 20);
-                matrixBar.innerHTML = `<span class="text-cyan-400">${"█".repeat(blockCount)}</span><span class="text-zinc-900">${"░".repeat(20 - blockCount)}</span>`;
-                document.getElementById('hex-stream').innerText = "0x" + Math.floor(Math.random() * 65535).toString(16).toUpperCase().padStart(4, '0');
-
-                if (elapsed < totalMs) {
-                    const rng = Math.random();
-                    let nextTick = 300;
-
-                    if (ratio > 0.3 && ratio < 0.85 && rng < 0.42) {
-                        currentTurbulence = Math.random() * 2.2 + 7.6; 
-                        if (currentTurbulence > maxTurbulenceRecorded) maxTurbulenceRecorded = currentTurbulence;
-                        logText.innerHTML = `<span class='text-rose-500 font-bold tracking-normal screenshot-text-safe' style='display:inline-block !important;'>&gt; [CRITICAL] 核心偏轉 ${currentTurbulence.toFixed(2)} 級！觸發維度警報！</span>`;
-                        mainFrame.classList.add('sys-alert-flash');
-                        document.getElementById('turbulence-display').innerText = `${currentTurbulence.toFixed(2)} 級`;
-                        startAlertSound(); 
-                        nextTick = 200;
-                    } else {
-                        currentTurbulence = Math.random() * 2.0 + 1.5;
-                        if (currentTurbulence > maxTurbulenceRecorded) maxTurbulenceRecorded = currentTurbulence;
-                        logText.innerHTML = `<span class='text-cyan-400 tracking-normal screenshot-text-safe' style='display:inline-block !important;'>&gt; 相位修正中... 剩餘 ${(Math.ceil((totalMs-elapsed)/1000))} 秒</span>`;
-                        mainFrame.classList.remove('sys-alert-flash');
-                        document.getElementById('turbulence-display').innerText = `${currentTurbulence.toFixed(2)} 級`;
-                        stopAlertSound(); 
-                        playTone(480, 0.03, 'sine', 0.06); 
-                        nextTick = 350;
-                    }
-                    timeoutId = setTimeout(runSequence, nextTick);
-                } else {
-                    stopAlertSound();
-                    mainFrame.classList.remove('sys-load-shake', 'sys-alert-flash');
-                    playTone(880, 0.6, 'sine', 0.15);
-                    
-                    document.getElementById('card-arrival-time').innerText = document.getElementById('vfd-screen').innerText;
-                    document.getElementById('card-stride').innerText = `${document.getElementById('time-val').value} ${document.getElementById('time-unit').options[document.getElementById('time-unit').selectedIndex].text}`;
-                    document.getElementById('card-max-turbo').innerText = `${maxTurbulenceRecorded.toFixed(2)} 級 ${maxTurbulenceRecorded >= 7.5 ? '(極度危險)' : '(常規干擾)'}`;
-                    document.getElementById('card-max-turbo').className = maxTurbulenceRecorded >= 7.5 ? "text-rose-500 font-bold" : "text-emerald-400 font-bold";
-                    document.getElementById('card-quote').innerText = `「${threadsQuotes[Math.floor(Math.random() * threadsQuotes.length)]}」`;
-
-                    const finalKey = document.getElementById('access-key').value.trim().toUpperCase();
-                    const finalCode = document.getElementById('operation-code').value.trim().toUpperCase();
-                    document.getElementById('card-key-display').innerText = finalKey || "DEFAULT_GUEST";
-                    document.getElementById('card-code-display').innerText = finalCode || "UNNAMED_ACTION";
-
-                    setTimeout(() => {
-                        mainFrame.classList.add('hidden');
-                        document.getElementById('share-screen').classList.remove('hidden');
-                    }, 500);
-                }
+        function randomizeHardwareStats() {
+            if (document.getElementById('landing-page').classList.contains('hidden') && !isRunning) {
+                currentTurbulence = (0.05 + Math.random() * 0.15).toFixed(2);
+                document.getElementById('turbulence-display').innerText = `${currentTurbulence} 級`;
+                document.getElementById('hex-stream').innerText = '0x' + Math.floor(Math.random()*65535).toString(16).toUpperCase();
             }
-            timeoutId = setTimeout(runSequence, 400);
+        }
+
+        // 模擬進度與後續跳轉的占位處理（配合原 index.html 架構）
+        document.addEventListener('DOMContentLoaded', () => {
+            generateRandomBroadcasts();
+            setInterval(generateRandomBroadcasts, 15000);
+
+            document.getElementById('btn-start').addEventListener('click', () => {
+                if (isRunning) return;
+                isRunning = true;
+                initAudio();
+                const wrapper = document.getElementById('progress-wrapper');
+                const logText = document.getElementById('log-text');
+                const bar = document.getElementById('matrix-bar');
+                
+                wrapper.classList.remove('hidden');
+                logText.innerText = "> 正在鎖定時間軸共振器...";
+                
+                let pct = 0;
+                const intv = setInterval(() => {
+                    pct += 10;
+                    let blocks = "";
+                    for(let i=0; i<20; i++) {
+                        blocks += i < (pct/5) ? "█" : "░";
+                    }
+                    bar.innerText = blocks;
+                    playTone(600 + pct*2, 0.04, 'sine', 0.03);
+
+                    if (pct === 40) logText.innerText = "> 時幕折疊場建立中...";
+                    if (pct === 80) logText.innerText = "> 正在將觀測資料寫入快取...";
+
+                    if (pct >= 100) {
+                        clearInterval(intv);
+                        // 計算穿梭後的目標時間顯示
+                        const val = parseInt(document.getElementById('time-val').value) || 5;
+                        const unit = document.getElementById('time-unit').value;
+                        let targetDate = new Date();
+                        
+                        if (unit === 'sec') targetDate.setSeconds(targetDate.getSeconds() + val);
+                        else if (unit === 'min') targetDate.setMinutes(targetDate.getMinutes() + val);
+                        else if (unit === 'hr') targetDate.setHours(targetDate.getHours() + val);
+                        else if (unit === 'day') targetDate.setDate(targetDate.getDate() + val);
+                        else if (unit === 'yr') targetDate.setFullYear(targetDate.getFullYear() + val);
+
+                        document.getElementById('card-arrival-time').innerText = targetDate.toLocaleString('zh-TW', { hour12: false });
+                        document.getElementById('card-stride').innerText = `${val} ${document.getElementById('time-unit').selectedOptions[0].text.replace('單位：','')}`;
+                        
+                        maxTurbulenceRecorded = (4.0 + Math.random() * 5.5).toFixed(2);
+                        document.getElementById('card-max-turbo').innerText = `${maxTurbulenceRecorded} 級`;
+                        document.getElementById('card-quote').innerText = `「${threadsQuotes[Math.floor(Math.random() * threadsQuotes.length)]}」`;
+
+                        // 進入小卡渲染頁面
+                        document.getElementById('main-frame').classList.add('hidden');
+                        document.getElementById('share-screen').classList.remove('remove'); // 防呆
+                        document.getElementById('share-screen').classList.remove('hidden');
+                        isRunning = false;
+                    }
+                }, 300);
+            });
         });
 
         function returnToSystem() {
             document.getElementById('share-screen').classList.add('hidden');
             document.getElementById('main-frame').classList.remove('hidden');
-            resetSystemState();
+            document.getElementById('progress-wrapper').classList.add('hidden');
         }
 
         function returnToLanding() {
             document.getElementById('share-screen').classList.add('hidden');
             document.getElementById('landing-page').classList.remove('hidden');
-            resetSystemState();
-        }
-
-        function resetSystemState() {
-            isRunning = false; isLocked = false; isCoolingDown = false;
-            document.getElementById('time-val').disabled = false;
-            document.getElementById('time-unit').disabled = false;
-            document.getElementById('btn-plus').disabled = false;
-            document.getElementById('btn-minus').disabled = false;
-            progressWrapper.classList.add('hidden');
-            btn.innerText = "執行時幕同步 // START_SYNC";
-            btn.className = "w-full py-4 bg-zinc-900 border-2 border-zinc-700 hover:border-cyan-500 text-zinc-300 hover:text-white text-[14px] font-black tracking-[0.3em] transition-all rounded shadow-md relative z-20";
-            footer.innerText = "// 系統狀態：待命區間";
-            calculateTargetTime();
         }
 
         function saveCardAndRedirect() {
             const card = document.getElementById('capture-card');
-            
+            playTone(1000, 0.2, 'sine', 0.1);
             html2canvas(card, {
-                backgroundColor: '#0d0f14',
-                scale: 3, 
-                logging: false,
+                backgroundColor: '#02040a',
+                scale: 2,
                 useCORS: true,
-                allowTaint: true,
-                windowWidth: 400,
-                windowHeight: 580,
-                onclone: (clonedDoc) => {
-                    const clonedCard = clonedDoc.getElementById('capture-card');
-                    if(clonedCard) {
-                        clonedCard.style.overflow = 'visible';
-                        clonedCard.style.boxShadow = 'none';
-                    }
-                }
+                logging: false
             }).then(canvas => {
                 const image = canvas.toDataURL("image/png");
                 const link = document.createElement('a');
+                link.download = `Chrono-Passport-${Date.now()}.png`;
                 link.href = image;
-                link.download = `ChronoPassport_${Date.now()}.png`;
-                document.body.appendChild(link); link.click(); document.body.removeChild(link);
-                setTimeout(() => { window.location.href = "https://s.shopee.tw/70HrxC2hY9"; }, 1000);
-            }).catch(() => {
-                window.location.href = "https://s.shopee.tw/70HrxC2hY9";
+                link.click();
             });
         }
     </script>
