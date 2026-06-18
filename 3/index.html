@@ -5,14 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>時空穿梭核心實驗室</title>
     
-    <meta property="og:title" content="時空穿梭計畫 // 核心實驗室">
-    <meta property="og:description" content="本裝置基於相對論時幕修正協定。引發不同程度的時間亂流，實時重組量子觀測維度。">
-    <meta property="og:image" content="social-preview.png">
+    <meta property="og:title" content="時空穿梭核心實驗室">
+    <meta property="og:description" content="基於相對論時幕修正協定，引發量子觀測維度的實時重組。">
     <meta property="og:type" content="website">
-
+    <meta property="og:image" content="social-preview.png">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="時空穿梭計畫 // 核心實驗室">
-    <meta name="twitter:description" content="本裝置基於相對論時幕修正協定。引發不同程度的時間亂流，實時重組量子觀測維度。">
+    <meta name="twitter:title" content="時空穿梭核心實驗室">
+    <meta name="twitter:description" content="基於相對論時幕修正協定，引發量子觀測維度的實時重組。">
     <meta name="twitter:image" content="social-preview.png">
 
     <meta name="google-adsense-account" content="ca-pub-9874958587973886">
@@ -341,7 +340,7 @@
         <div id="capture-card" class="card-bg-pattern w-full border-2 border-zinc-800 p-6 rounded-xl shadow-[0_0_40px_rgba(34,211,238,0.15)] relative flex flex-col gap-5 overflow-visible" style="width: 100%; max-width: 400px;">
             <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-cyan-500 via-purple-500 to-rose-500 z-50"></div>
             
-            <div class="relative w-full pb-4 overflow-visible" style="min-h-12">
+            <div class="relative w-full pb-4 overflow-visible" style="min-height: 48px;">
                 <div class="pr-[120px]">
                     <span class="text-[10px] font-mono tracking-widest text-zinc-500 block screenshot-text-safe">CHRONO_PASSPORT</span>
                     <h3 class="text-xl font-black text-white tracking-tighter mt-0.5 uppercase screenshot-text-safe">時空秩序旅行證</h3>
@@ -456,6 +455,20 @@
             "亂流高達八級，我的意志力只有一級。安全抵達純屬量子力學日常奇蹟。",
             "成功折疊了時間。但有些遺憾就像時間亂流一樣，怎麼修正都有雜訊。"
         ];
+
+        // 🚀 動態社群縮圖絕對路徑修復腳本
+        function fixMetaImageAbsoluteUrls() {
+            const currentUrl = window.location.href;
+            const baseUrl = currentUrl.substring(0, currentUrl.lastIndexOf('/') + 1);
+            const absoluteImageUrl = baseUrl + 'social-preview.png';
+            
+            const metaOgImage = document.querySelector('meta[property="og:image"]');
+            const metaTwitterImage = document.querySelector('meta[name="twitter:image"]');
+            
+            if (metaOgImage) metaOgImage.setAttribute('content', absoluteImageUrl);
+            if (metaTwitterImage) metaTwitterImage.setAttribute('content', absoluteImageUrl);
+        }
+        fixMetaImageAbsoluteUrls();
 
         function generateRandomBroadcasts() {
             const container = document.getElementById('broadcast-container');
