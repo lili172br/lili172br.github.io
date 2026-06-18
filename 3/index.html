@@ -2,13 +2,12 @@
 <html lang="zh-TW">
 <head>
     <meta charset="UTF-8">
-    <meta name="google-adsense-account" content="ca-pub-9874958587973886">
+     <meta name="google-adsense-account" content="ca-pub-9874958587973886">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9874958587973886"
      crossorigin="anonymous"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>時空穿梭核心實驗室</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- 引入 html2canvas 用於前端直接渲染圖片快照 -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Courier+Prime:wght=400;700&display=swap');
@@ -101,14 +100,12 @@
 </head>
 <body class="min-h-screen flex flex-col items-center justify-start p-4 select-none relative">
 
-    <!-- 全局音效開關 -->
     <div class="fixed top-4 right-4 z-50">
         <button id="audio-toggle" onclick="toggleAudio()" class="px-3 py-1.5 border border-cyan-500 bg-zinc-950 text-cyan-400 font-mono text-[10px] uppercase tracking-wider hover:text-white hover:border-white transition-all rounded">
             系統音效：已開啟 🔊
         </button>
     </div>
 
-    <!-- ==================== 第一階段：首頁說明頁面 ==================== -->
     <main id="landing-page" class="max-w-md w-full border border-slate-800 bg-[#050810] p-6 md:p-8 relative rounded-md shadow-[0_0_50px_rgba(0,0,0,0.8)] my-4">
         <header class="mb-6 border-b border-zinc-900 pb-4 relative">
             <div class="absolute top-0 right-0 flex items-center gap-1.5 text-[9px] text-cyan-400 font-mono tracking-wider animate-pulse">
@@ -121,7 +118,6 @@
             </div>
         </header>
 
-        <!-- 環境參數觀測盾 -->
         <div class="grid grid-cols-3 gap-2 bg-black/60 p-3 border border-slate-900 rounded font-mono text-[9px] mb-6">
             <div class="border-r border-zinc-800 pr-1">
                 <span class="text-zinc-600 block text-[8px]">LOCAL_GRAVITY</span>
@@ -142,7 +138,6 @@
             <p>本裝置基於相對論時幕修正協定。當我們人為干涉物理時幕增量時，系統周遭將引發不同程度的時間亂流。這並非虛幻的投影，而是量子觀測維度的實時重組。</p>
         </section>
 
-        <!-- 金鑰與行動代號輸入框（複合式配置：字體優化加大、全面中文標籤） -->
         <div class="mt-6 pt-4 border-t border-zinc-900 space-y-4">
             <div class="flex flex-col gap-2 bg-black/50 p-3 border border-slate-800 rounded">
                 <label class="text-xs font-bold text-zinc-300 tracking-wider">【 1. 輸入驗證金鑰（選填） 】</label>
@@ -151,7 +146,7 @@
             </div>
             <div class="flex flex-col gap-2 bg-black/50 p-3 border border-slate-800 rounded">
                 <label class="text-xs font-bold text-zinc-300 tracking-wider">【 2. 輸入行動代號（選填） 】</label>
-                <input type="text" id="operation-code" placeholder="例如：OPERATION_CHRONOS" 
+                <input type="text" id="operation-code" placeholder="example: OPERATION_CHRONOS" 
                     class="bg-zinc-950 border border-zinc-700 text-purple-400 font-mono text-sm p-2.5 outline-none focus:border-purple-500 uppercase tracking-widest placeholder-zinc-700 rounded">
             </div>
         </div>
@@ -161,15 +156,12 @@
             <span>CHRONO_CORE // #2026-FIST-X</span>
         </div>
         
-        <!-- 【核心主控按鈕】 -->
         <button onclick="startTerminal()" class="block w-full py-4 bg-white text-black text-center font-black uppercase tracking-widest hover:bg-cyan-500 hover:text-white transition-all duration-300 btn-glow text-xs mb-8 rounded">
             初始化時幕終端 ENTER_CORE
         </button>
 
-        <!-- 廣告與延伸技術細節區塊 -->
         <div class="mt-4 pt-6 border-t-2 border-dashed border-zinc-900 space-y-8">
             
-            <!-- ⚡ 區塊 1：實時硬體診斷指標 -->
             <section class="text-xs font-mono">
                 <h2 class="text-sm tracking-wider uppercase text-zinc-200">// 核心硬體實時監測矩陣</h2>
                 <div class="grid grid-cols-2 gap-2 mt-3 text-[10px]">
@@ -192,7 +184,6 @@
                 </div>
             </section>
 
-            <!-- ⚡ 區塊 2：硬體架構與伺服器規格 -->
             <section class="text-xs text-zinc-400 leading-relaxed">
                 <h2 class="text-sm tracking-wider uppercase text-zinc-200">// 主機硬體架構與環境部署</h2>
                 <p class="mt-2 text-[11px] text-zinc-500">本穿梭協議運作於分散式叢集架構下。為了確保時間折疊密鑰不遭到雜訊干擾，底層節點全面導入高效能企業級雲端硬體配置：</p>
@@ -203,18 +194,15 @@
                 </ul>
             </section>
 
-            <!-- ⚡ 區塊 3：動態隨機廣播區塊（全台 22 縣市節點定時抽樣洗牌） -->
             <section class="text-xs font-mono">
                 <div class="flex justify-between items-end">
                     <h2 class="text-sm tracking-wider uppercase text-zinc-200">// 臺灣分區實驗節點廣播</h2>
                     <span class="text-[8px] text-cyan-500/60 font-bold animate-pulse mb-3">🔄 15秒自動校準</span>
                 </div>
                 <div id="broadcast-container" class="mt-3 space-y-2.5 bg-black/30 p-3 border border-zinc-900 rounded text-[11px]">
-                    <!-- JavaScript 動態插入 -->
-                </div>
+                    </div>
             </section>
 
-            <!-- ⚡ 區塊 4：常見維度問題 FAQ -->
             <section class="text-xs text-zinc-400 leading-relaxed space-y-3">
                 <h2 class="text-sm tracking-wider uppercase text-zinc-200">// 常見維度操作問題 (FAQ)</h2>
                 <div class="border-b border-zinc-950 pb-2">
@@ -227,10 +215,9 @@
                 </div>
             </section>
 
-            <!-- ⚡ 區塊 5：歷史穿梭日誌摺疊選單 -->
             <div class="border border-slate-900 bg-black/30 rounded">
                 <input type="checkbox" id="log-accordion" class="hidden accordion-toggle">
-                <label for="log-accordion" onclick="playMechanicalTick()" class="flex justify-between items-center px-3 py-2 text-[10px] font-mono text-zinc-500 cursor-pointer hover:bg-zinc-900/50 select-none">
+                <label for="log-accordion" class="flex justify-between items-center px-3 py-2 text-[10px] font-mono text-zinc-500 cursor-pointer hover:bg-zinc-900/50 select-none">
                     <span>[ 📂 檢視實驗室紀錄歷史日誌 ]</span>
                     <span class="text-[8px] text-zinc-600">▼ 點擊展開</span>
                 </label>
@@ -239,67 +226,8 @@
                     <p class="pb-2"><span class="text-zinc-700">#2026-06-19:</span> 全台 22 處量子次級子網重新校準就緒。</p>
                 </div>
             </div>
-
-            <!-- ⚡ 區塊 6：量子定錨節點硬體採購技術說明 -->
-            <section class="text-xs text-zinc-400 leading-relaxed space-y-2 pt-4 border-t border-zinc-900/60">
-                <h2 class="text-sm tracking-wider uppercase text-zinc-200">// 量子核心定錨節點技術白皮書</h2>
-                <p class="text-[11px] text-zinc-500">
-                    為了維持全台 22 縣市次級子網的時脈穩定，實驗室底層硬體採購標準皆符合工業級與企業級資料中心（Data Center）規範。本專案全面採用專屬供應鏈客製化組件：
-                </p>
-                <div class="bg-black/40 p-3 border border-zinc-950 rounded font-mono text-[11px] space-y-2">
-                    <p><span class="text-amber-500 font-bold">■ 伺服器機架與電源：</span> 採用 42U 標準機櫃，配置雙路冗餘（1+1）鈦金級高效率電源供應器（Power Supply），支援高抗噪、防雷擊抗尖峰電壓波幅。</p>
-                    <p><span class="text-amber-500 font-bold">■ 核心網路交換機：</span> 部署 400GbE 超高頻寬基幹交換機（Network Switch），支援 L3 路由協議與硬體級防火牆（Firewall）防護，防止惡意 DDOS 時流阻斷攻擊。</p>
-                    <p><span class="text-amber-500 font-bold">■ 精密製冷與環境控制：</span> 導入機櫃式液冷（Liquid Cooling）循環系統與精密空調，恆溫 20°C 恆濕 45%，防範晶片熱阻引發量子漂移。</p>
-                </div>
-            </section>
-
-            <!-- ⚡ 區塊 7：維度安全防禦協議 -->
-            <section class="text-xs text-zinc-400 leading-relaxed space-y-2">
-                <h2 class="text-sm tracking-wider uppercase text-zinc-200">// 時空網路安全（Cybersecurity）防禦協定</h2>
-                <p class="text-[11px] text-zinc-500">
-                    時脈資料在跨縣市傳輸時，極易遭到第三方觀測者監聽或注入惡意竄改封包。系統於應用層與傳輸層實施全面加密防禦：
-                </p>
-                <ul class="list-none space-y-1.5 font-mono text-[11px] pl-1 text-zinc-400">
-                    <li><span class="text-purple-400">⚡ [零信任架構]</span> 每次簽入皆需通過雙因子驗證（2FA）與動態 JWT 金鑰比對，防止未授權端點溢出。</li>
-                    <li><span class="text-purple-400">⚡ [端到端加密]</span> 採用 AES-GCM 256 位元晶片級硬體加密，確保傳輸路徑中所有量子位元高度混淆。</li>
-                    <li><span class="text-purple-400">⚡ [區塊鏈日誌]</span> 歷史穿梭紀錄自動寫入去中心化分散式帳本，具備不可篡改性，隨時接受資安稽核。</li>
-                </ul>
-            </section>
-
-            <!-- ⚡ 區塊 8：精密物理量測設備供應商表格 -->
-            <section class="text-xs font-mono">
-                <h2 class="text-sm tracking-wider uppercase text-zinc-200">// 精密物理量測設備規格基準一覽</h2>
-                <p class="text-[11px] text-zinc-500 mb-2 leading-normal">以下為本年度核心實驗室指定合作之全球精密量測、科學半導體儀器設備基準規格參考：</p>
-                <table class="w-full text-left text-[10px] border border-zinc-950 bg-black/20 rounded overflow-hidden">
-                    <thead>
-                        <tr class="bg-zinc-950 text-cyan-400 font-bold border-b border-zinc-900">
-                            <th class="p-2">設備分類</th>
-                            <th class="p-2">核准規格</th>
-                            <th class="p-2">合規認證</th>
-                        </tr>
-                    </thead>
-                    <tbody class="text-zinc-400 divide-y divide-zinc-950/60 font-mono">
-                        <tr>
-                            <td class="p-2 text-zinc-300 font-bold">銫原子鐘 (Atomic Clock)</td>
-                            <td class="p-2">頻率穩定度 &lt; 5×10⁻¹⁵</td>
-                            <td class="p-2 text-emerald-500">TAI_符合標準</td>
-                        </tr>
-                        <tr>
-                            <td class="p-2 text-zinc-300 font-bold">數位示波器 (Oscilloscope)</td>
-                            <td class="p-2">頻寬 100GHz / 4通道實時</td>
-                            <td class="p-2 text-emerald-500">ISO_9001</td>
-                        </tr>
-                        <tr>
-                            <td class="p-2 text-zinc-300 font-bold">低溫訊號放大器 (LNA)</td>
-                            <td class="p-2">雜訊係數 &lt; 0.1dB @ 4K</td>
-                            <td class="p-2 text-emerald-500">NIST_可追溯</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </section>
         </div>
 
-        <!-- 自我診斷序列滾動底條 -->
         <div class="mt-6 bg-black/80 border border-slate-950 p-1 rounded font-mono text-[8px] text-zinc-600 overflow-hidden h-5 flex items-center">
             <div class="animate-pulse mr-2 text-cyan-600">●</div>
             <div id="diagnostic-scroller" class="whitespace-nowrap transition-all duration-150">
@@ -309,15 +237,12 @@
     </main>
 
 
-    <!-- ==================== 第二階段：時空穿梭操作面板 ==================== -->
     <main id="main-frame" class="crt-screen max-w-md w-full border-2 border-slate-800 bg-[#050810] p-6 md:p-8 relative tracking-widest shadow-[0_0_50px_rgba(0,0,0,0.8)] rounded-md overflow-hidden hidden my-4">
         
-        <!-- 頂部核心資訊 -->
         <header class="mb-6 flex justify-between items-start border-b border-slate-900 pb-4 relative z-20">
             <div>
                 <h1 class="text-zinc-100 text-2xl font-black tracking-[0.15em] crt-glow">時空穿梭模組</h1>
                 <p class="text-[11px] text-zinc-500 mt-1.5 font-bold tracking-normal">MONITOR_PROTOCOL // SYS_CLK_v4.3</p>
-                <!-- 即時顯示剛剛填寫的金鑰與代號（唯讀提示） -->
                 <div class="text-[10px] font-mono text-zinc-400 mt-2 space-y-0.5 tracking-wider">
                     <div>驗證金鑰：<span id="panel-key-display" class="text-cyan-400 font-bold">無</span></div>
                     <div>行動代號：<span id="panel-code-display" class="text-purple-400 font-bold">無</span></div>
@@ -335,7 +260,6 @@
             </div>
         </header>
 
-        <!-- 預計抵達顯示器 -->
         <div class="mb-8 text-center bg-black/80 py-5 border border-slate-900 rounded relative z-20">
             <span class="text-[10px] text-zinc-500 block mb-2 font-black uppercase tracking-wider">// 預計抵達時間時間矩陣 //</span>
             <div id="vfd-screen" class="text-xl font-black text-cyan-400 vfd-glow tabular-nums tracking-wide px-2">
@@ -343,7 +267,6 @@
             </div>
         </div>
 
-        <!-- 手機專用大紐加減控制器與單位切換器 -->
         <div class="mb-8 relative z-20">
             <div class="flex flex-col gap-3 bg-black/50 p-4 border border-zinc-900 rounded">
                 <div class="flex justify-between items-center">
@@ -371,12 +294,10 @@
             </div>
         </div>
 
-        <!-- 複合式執行按鈕 -->
         <button id="btn-start" class="w-full py-4 bg-zinc-900 border-2 border-zinc-700 hover:border-cyan-500 text-zinc-300 hover:text-white text-[14px] font-black tracking-[0.3em] transition-all rounded shadow-md relative z-20">
             執行時幕同步 // START_SYNC
         </button>
 
-        <!-- 進度條與日誌 -->
         <div id="progress-wrapper" class="mt-8 hidden space-y-4 relative z-20">
             <div class="bg-black border border-slate-900 p-3 font-mono text-center">
                 <div id="matrix-bar" class="text-zinc-800 text-xl font-black tracking-[0.15em] pt-2 select-none">
@@ -394,11 +315,9 @@
     </main>
 
 
-    <!-- ==================== 第三階段：社群分享精美紀念小卡介面 ==================== -->
     <main id="share-screen" class="max-w-md w-full flex flex-col items-center hidden my-4">
         
-        <!-- 卡片實體渲染區 -->
-        <div id="capture-card" class="card-bg-pattern w-full border-2 border-zinc-800 p-6 rounded-xl shadow-[0_0_40px_rgba(34,211,238,0.15)] relative overflow-hidden flex flex-col gap-5">
+        <div id="capture-card" class="card-bg-pattern w-full border-2 border-zinc-800 p-6 rounded-xl shadow-[0_0_40px_rgba(34,211,238,0.15)] relative overflow-hidden flex flex-col gap-5 box-border" style="width: 100%; max-width: 400px;">
             <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-cyan-500 via-purple-500 to-rose-500"></div>
             
             <div class="flex justify-between items-start">
@@ -406,33 +325,30 @@
                     <span class="text-[10px] font-mono tracking-widest text-zinc-500 block">CHRONO_PASSPORT</span>
                     <h3 class="text-xl font-black text-white tracking-tighter mt-0.5 uppercase">時空秩序旅行證</h3>
                 </div>
-                <div class="border border-cyan-500/30 px-2 py-0.5 rounded text-[9px] font-mono text-cyan-400 bg-cyan-950/40">
+                <div class="border border-cyan-500/40 px-2 py-0.5 rounded text-[9px] font-mono text-cyan-400 bg-cyan-950/40 whitespace-nowrap">
                     驗證核准 № 884-A
                 </div>
             </div>
 
-            <!-- 核心金鑰與行動代號動態印章 -->
-            <div class="grid grid-cols-2 gap-2 font-mono text-[9px] bg-black/40 border border-zinc-900/60 p-2 rounded">
-                <div>
-                    <span class="text-zinc-600 block text-[8px]">驗證金鑰 ACCESS_KEY:</span>
-                    <span id="card-key-display" class="text-cyan-400 font-bold tracking-tight truncate block">DEFAULT_GUEST</span>
+            <div class="font-mono text-[10px] bg-black/50 border border-zinc-900/80 p-3 rounded space-y-2">
+                <div class="block w-full overflow-hidden">
+                    <span class="text-zinc-600 block text-[9px] uppercase font-bold">驗證金鑰 ACCESS_KEY:</span>
+                    <span id="card-key-display" class="text-cyan-400 font-bold tracking-wider block w-full mt-0.5" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">DEFAULT_GUEST</span>
                 </div>
-                <div class="border-l border-zinc-900/80 pl-2">
-                    <span class="text-zinc-600 block text-[8px]">行動代號 CODENAME:</span>
-                    <span id="card-code-display" class="text-purple-400 font-bold tracking-tight truncate block">UNNAMED_ACTION</span>
+                <div class="block w-full overflow-hidden border-t border-zinc-900/60 pt-2">
+                    <span class="text-zinc-600 block text-[9px] uppercase font-bold">行動代號 CODENAME:</span>
+                    <span id="card-code-display" class="text-purple-400 font-bold tracking-wider block w-full mt-0.5" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">UNNAMED_ACTION</span>
                 </div>
             </div>
 
-            <!-- 時間結果 -->
             <div class="bg-black/80 border border-zinc-800 rounded-lg p-4 text-center relative">
                 <div class="absolute -top-2 left-4 px-1.5 bg-zinc-900 text-[8px] font-mono text-zinc-500">ARRIVED_TARGET_MATRIX</div>
                 <p class="text-[10px] text-zinc-500 tracking-widest mb-1.5 uppercase font-mono">// 已定錨目標時間線 //</p>
-                <div id="card-arrival-time" class="text-base font-black text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-teal-300 font-mono tracking-normal">
+                <div id="card-arrival-time" class="text-base font-black text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-teal-300 font-mono tracking-normal whitespace-nowrap">
                     2026年06月19日 02:17:14
                 </div>
             </div>
 
-            <!-- 旅行數據 -->
             <div class="grid grid-cols-2 gap-3 font-mono text-xs">
                 <div class="bg-zinc-900/40 p-2.5 border border-zinc-850 rounded">
                     <span class="text-[9px] text-zinc-600 block">維度跳躍跨度</span>
@@ -444,7 +360,6 @@
                 </div>
             </div>
 
-            <!-- 脆（Threads）高共鳴語錄 -->
             <div class="bg-gradient-to-br from-zinc-900 to-black p-3.5 border border-zinc-800 rounded-lg relative">
                 <span class="absolute top-2 right-3 text-xl text-zinc-800 font-serif">“</span>
                 <span class="text-[9px] font-mono text-purple-400 block mb-1">◆ 量子觀測評語 //</span>
@@ -453,7 +368,6 @@
                 </p>
             </div>
 
-            <!-- 條碼尾部 -->
             <div class="flex justify-between items-center border-t border-zinc-900 pt-3 mt-1">
                 <div class="font-mono text-[8px] text-zinc-600 uppercase">
                     <p>Origin: SHILIN_TAIPEI</p>
@@ -472,9 +386,7 @@
             💡 小卡已為您渲染！若手機未自動下載，可直接「長按上方卡片」儲存並分享！
         </p>
 
-        <!-- 改為三按鈕配置：上二下一 -->
         <div class="w-full mt-6 space-y-3">
-            <!-- 上方排：雙按鈕並列 -->
             <div class="grid grid-cols-2 gap-3">
                 <button onclick="returnToSystem()" class="py-3 px-1 border border-zinc-700 bg-zinc-950 text-zinc-400 text-xs font-black tracking-wider rounded-lg active:bg-zinc-900 transition-colors">
                     ↩ 返回穿梭系統
@@ -483,15 +395,12 @@
                     🏠 返回主頁說明
                 </button>
             </div>
-            <!-- 下方排：儲存小卡主按鈕 -->
             <button onclick="saveCardAndRedirect()" class="w-full py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white text-xs font-black tracking-widest rounded-lg shadow-lg active:opacity-90 transition-opacity uppercase">
                 💾 保存小卡
             </button>
         </div>
     </main>
 
-
-    <!-- 隱私與合規頁尾 -->
     <footer class="w-full max-w-md text-center font-mono text-[10px] text-zinc-600 mt-4 mb-4 border-t border-zinc-900/60 pt-4">
         <div class="flex justify-center gap-4 mb-2">
             <a href="#privacy" class="hover:text-cyan-500">[ 隱私權政策 PRIVACY_POLICY ]</a>
@@ -517,17 +426,14 @@
             { user: "👤 台北士林主節點 // TPE-01", color: "text-cyan-400", text: "捕捉到微弱背景宇宙射線暴，相對論時幕波形出現輕微漣漪，快取寫入正常。" },
             { user: "👤 新北板橋機房 // NTP-02", color: "text-blue-500", text: "分散式異地備援主機負載達 64%，NVMe 資料儲存陣列未發現位元漂移。" },
             { user: "👤 桃園航空觀測盾 // TYU-04", color: "text-teal-500", text: "高空急流引發量子熵值微幅震盪，對空雷達暫存快取區運作平穩。" },
-            { user: "👤 新竹市科學園區 // HCC-01", color: "text-emerald-500", text: "高階處理器運算晶片冷卻壓力回升，核心 VCC 電壓維持 1.24V 穩定運作。" },
-            { user: "👤 嘉義市微型實驗室 // CYI-01", color: "text-pink-500", text: "微型終端接收到來自台北主節點的廣播同步，十六進位混亂狀態防禦啟動。" },
-            { user: "👤 嘉義縣民雄定錨點 // CYQ-02", color: "text-rose-500", text: "北回歸線量子定錨儀完成年度校準，局部地表重力常數維持 9.7821 m/s²。" }
+            { user: "👤 新竹市科學園區 // HCC-01", color: "text-emerald-500", text: "高階處理器運算晶片冷卻壓力回升，核心 VCC 電壓維持 1.24V 穩定運作。" }
         ];
 
         const threadsQuotes = [
             "時間沒有消失，只是變成了你在手機前面發呆的這幾秒鐘。",
             "剛剛差點觸發世界線崩塌，但沒關係，明天還是要準時去上班上課。",
             "亂流高達八級，我的意志力只有一級。安全抵達純屬量子力學日常奇蹟。",
-            "成功折疊了時間。但有些遺憾就像時間亂流一樣，怎麼修正都有雜訊。",
-            "時間可以被同步，但你在脆上發的廢文沒辦法被回收。"
+            "成功折疊了時間。但有些遺憾就像時間亂流一樣，怎麼修正都有雜訊。"
         ];
 
         function generateRandomBroadcasts() {
@@ -608,10 +514,10 @@
                     const osc = audioCtx.createOscillator();
                     const gain = audioCtx.createGain();
                     osc.type = 'sawtooth'; osc.frequency.setValueAtTime(660, now); 
-                    gain.gain.setValueAtTime(0.18, now);
-                    gain.gain.linearRampToValueAtTime(0.01, now + 0.2);
+                    gain.gain.setValueAtTime(0.15, now);
+                    gain.gain.linearRampToValueAtTime(0.01, now + 0.18);
                     osc.connect(gain); gain.connect(audioCtx.destination);
-                    osc.start(); osc.stop(now + 0.22);
+                    osc.start(); osc.stop(now + 0.2);
                 } catch(e){}
             }, 300);
         }
@@ -639,11 +545,9 @@
             initAudio();
             playTone(800, 0.05, 'sine', 0.1);
 
-            // 讀取首頁輸入的金鑰與行動代號
             const keyVal = document.getElementById('access-key').value.trim().toUpperCase();
             const codeVal = document.getElementById('operation-code').value.trim().toUpperCase();
 
-            // 更新到操作面板控制台的唯讀資訊區
             document.getElementById('panel-key-display').innerText = keyVal || "DEFAULT_GUEST";
             document.getElementById('panel-code-display').innerText = codeVal || "UNNAMED_ACTION";
 
@@ -729,8 +633,8 @@
                     const rng = Math.random();
                     let nextTick = 300;
 
-                    if (ratio > 0.4 && ratio < 0.8 && rng < 0.4) {
-                        currentTurbulence = Math.random() * 2.0 + 7.8; 
+                    if (ratio > 0.3 && ratio < 0.85 && rng < 0.42) {
+                        currentTurbulence = Math.random() * 2.2 + 7.6; 
                         if (currentTurbulence > maxTurbulenceRecorded) maxTurbulenceRecorded = currentTurbulence;
                         logText.innerHTML = `<span class='text-rose-500 font-bold'>&gt; [CRITICAL] 核心偏轉 ${currentTurbulence.toFixed(2)} 級！觸發維度警報！</span>`;
                         mainFrame.classList.add('sys-alert-flash');
@@ -738,14 +642,14 @@
                         startAlertSound(); 
                         nextTick = 200;
                     } else {
-                        currentTurbulence = Math.random() * 2.0 + 2.0;
+                        currentTurbulence = Math.random() * 2.0 + 1.5;
                         if (currentTurbulence > maxTurbulenceRecorded) maxTurbulenceRecorded = currentTurbulence;
                         logText.innerHTML = `<span class='text-cyan-400'>&gt; 相位修正中... 剩餘 ${(Math.ceil((totalMs-elapsed)/1000))} 秒</span>`;
                         mainFrame.classList.remove('sys-alert-flash');
                         document.getElementById('turbulence-display').innerText = `${currentTurbulence.toFixed(2)} 級`;
                         stopAlertSound(); 
-                        playTone(400, 0.02, 'sine', 0.04);
-                        nextTick = 400;
+                        playTone(480, 0.03, 'sine', 0.06); 
+                        nextTick = 350;
                     }
                     timeoutId = setTimeout(runSequence, nextTick);
                 } else {
@@ -753,14 +657,12 @@
                     mainFrame.classList.remove('sys-load-shake', 'sys-alert-flash');
                     playTone(880, 0.6, 'sine', 0.15);
                     
-                    // 渲染並串聯數據到紀念旅行證小卡上
                     document.getElementById('card-arrival-time').innerText = document.getElementById('vfd-screen').innerText;
                     document.getElementById('card-stride').innerText = `${document.getElementById('time-val').value} ${document.getElementById('time-unit').options[document.getElementById('time-unit').selectedIndex].text}`;
                     document.getElementById('card-max-turbo').innerText = `${maxTurbulenceRecorded.toFixed(2)} 級 ${maxTurbulenceRecorded >= 7.5 ? '(極度危險)' : '(常規干擾)'}`;
                     document.getElementById('card-max-turbo').className = maxTurbulenceRecorded >= 7.5 ? "text-rose-500 font-bold" : "text-emerald-400 font-bold";
                     document.getElementById('card-quote').innerText = `「${threadsQuotes[Math.floor(Math.random() * threadsQuotes.length)]}」`;
 
-                    // 將首頁的金鑰與行動代號動態印製在卡片實體上
                     const finalKey = document.getElementById('access-key').value.trim().toUpperCase();
                     const finalCode = document.getElementById('operation-code').value.trim().toUpperCase();
                     document.getElementById('card-key-display').innerText = finalKey || "DEFAULT_GUEST";
@@ -775,14 +677,12 @@
             timeoutId = setTimeout(runSequence, 400);
         });
 
-        // 3按鈕：返回穿梭面板
         function returnToSystem() {
             document.getElementById('share-screen').classList.add('hidden');
             document.getElementById('main-frame').classList.remove('hidden');
             resetSystemState();
         }
 
-        // 3按鈕：返回首頁說明
         function returnToLanding() {
             document.getElementById('share-screen').classList.add('hidden');
             document.getElementById('landing-page').classList.remove('hidden');
@@ -802,13 +702,16 @@
             calculateTargetTime();
         }
 
+        // 核心修正：優化截圖參數，鎖定視窗邊界，解決移動端位移問題
         function saveCardAndRedirect() {
             const card = document.getElementById('capture-card');
             html2canvas(card, {
                 backgroundColor: '#0d0f14',
                 scale: 2, 
                 logging: false,
-                useCORS: true
+                useCORS: true,
+                windowWidth: 420, // 鎖定虛擬畫布寬度，防堵移動端解析度造成的文字折疊
+                windowHeight: 600
             }).then(canvas => {
                 const image = canvas.toDataURL("image/png");
                 const link = document.createElement('a');
