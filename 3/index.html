@@ -2,11 +2,11 @@
 <html lang="zh-TW">
 <head>
     <meta charset="UTF-8">
-     <meta name="google-adsense-account" content="ca-pub-9874958587973886">
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9874958587973886"
-     crossorigin="anonymous"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>時空穿梭核心實驗室</title>
+    <meta name="google-adsense-account" content="ca-pub-9874958587973886">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9874958587973886" crossorigin="anonymous"></script>
+    
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     <style>
@@ -96,6 +96,16 @@
             background-size: 20px 20px;
             background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
         }
+
+        /* 🚀 針對截圖強化的強制圖層安全 CSS 防線 */
+        .screenshot-text-safe {
+            position: relative !important;
+            z-index: 50 !important;
+            display: block !important;
+            line-height: 1.5 !important;
+            padding-bottom: 2px !important; /* 擴張下襯，防堵中文字體底部切邊 */
+            overflow: visible !important;
+        }
     </style>
 </head>
 <body class="min-h-screen flex flex-col items-center justify-start p-4 select-none relative">
@@ -146,7 +156,7 @@
             </div>
             <div class="flex flex-col gap-2 bg-black/50 p-3 border border-slate-800 rounded">
                 <label class="text-xs font-bold text-zinc-300 tracking-wider">【 2. 輸入行動代號（選填） 】</label>
-                <input type="text" id="operation-code" placeholder="example: OPERATION_CHRONOS" 
+                <input type="text" id="operation-code" placeholder="例如：OPERATION_CHRONOS" 
                     class="bg-zinc-950 border border-zinc-700 text-purple-400 font-mono text-sm p-2.5 outline-none focus:border-purple-500 uppercase tracking-widest placeholder-zinc-700 rounded">
             </div>
         </div>
@@ -317,67 +327,67 @@
 
     <main id="share-screen" class="max-w-md w-full flex flex-col items-center hidden my-4">
         
-        <div id="capture-card" class="card-bg-pattern w-full border-2 border-zinc-800 p-6 rounded-xl shadow-[0_0_40px_rgba(34,211,238,0.15)] relative overflow-hidden flex flex-col gap-5 box-border" style="width: 100%; max-width: 400px;">
-            <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-cyan-500 via-purple-500 to-rose-500"></div>
+        <div id="capture-card" class="card-bg-pattern w-full border-2 border-zinc-800 p-6 rounded-xl shadow-[0_0_40px_rgba(34,211,238,0.15)] relative flex flex-col gap-5 overflow-visible" style="width: 100%; max-width: 400px;">
+            <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-cyan-500 via-purple-500 to-rose-500 z-50"></div>
             
-            <div class="flex justify-between items-start">
+            <div class="flex justify-between items-start overflow-visible">
                 <div>
-                    <span class="text-[10px] font-mono tracking-widest text-zinc-500 block">CHRONO_PASSPORT</span>
-                    <h3 class="text-xl font-black text-white tracking-tighter mt-0.5 uppercase">時空秩序旅行證</h3>
+                    <span class="text-[10px] font-mono tracking-widest text-zinc-500 block screenshot-text-safe">CHRONO_PASSPORT</span>
+                    <h3 class="text-xl font-black text-white tracking-tighter mt-0.5 uppercase screenshot-text-safe">時空秩序旅行證</h3>
                 </div>
-                <div class="border border-cyan-500/40 px-2 py-0.5 rounded text-[9px] font-mono text-cyan-400 bg-cyan-950/40 whitespace-nowrap">
+                <div class="border border-cyan-500/40 px-2 py-0.5 rounded text-[9px] font-mono text-cyan-400 bg-cyan-950/40 whitespace-nowrap screenshot-text-safe">
                     驗證核准 № 884-A
                 </div>
             </div>
 
-            <div class="font-mono text-[10px] bg-black/50 border border-zinc-900/80 p-3 rounded space-y-2">
-                <div class="block w-full overflow-hidden">
-                    <span class="text-zinc-600 block text-[9px] uppercase font-bold">驗證金鑰 ACCESS_KEY:</span>
-                    <span id="card-key-display" class="text-cyan-400 font-bold tracking-wider block w-full mt-0.5" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">DEFAULT_GUEST</span>
+            <div class="font-mono text-[10px] bg-black/60 border border-zinc-900/80 p-3 rounded space-y-3 overflow-visible">
+                <div class="block w-full overflow-visible pb-1">
+                    <span class="text-zinc-600 block text-[9px] uppercase font-bold screenshot-text-safe">驗證金鑰 ACCESS_KEY:</span>
+                    <span id="card-key-display" class="text-cyan-400 font-bold tracking-wider block w-full mt-1 screenshot-text-safe" style="white-space: nowrap;">DEFAULT_GUEST</span>
                 </div>
-                <div class="block w-full overflow-hidden border-t border-zinc-900/60 pt-2">
-                    <span class="text-zinc-600 block text-[9px] uppercase font-bold">行動代號 CODENAME:</span>
-                    <span id="card-code-display" class="text-purple-400 font-bold tracking-wider block w-full mt-0.5" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">UNNAMED_ACTION</span>
+                <div class="block w-full overflow-visible border-t border-zinc-900/60 pt-2 pb-1">
+                    <span class="text-zinc-600 block text-[9px] uppercase font-bold screenshot-text-safe">行動代號 CODENAME:</span>
+                    <span id="card-code-display" class="text-purple-400 font-bold tracking-wider block w-full mt-1 screenshot-text-safe" style="white-space: nowrap;">UNNAMED_ACTION</span>
                 </div>
             </div>
 
-            <div class="bg-black/80 border border-zinc-800 rounded-lg p-4 text-center relative">
-                <div class="absolute -top-2 left-4 px-1.5 bg-zinc-900 text-[8px] font-mono text-zinc-500">ARRIVED_TARGET_MATRIX</div>
-                <p class="text-[10px] text-zinc-500 tracking-widest mb-1.5 uppercase font-mono">// 已定錨目標時間線 //</p>
-                <div id="card-arrival-time" class="text-base font-black text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-teal-300 font-mono tracking-normal whitespace-nowrap">
+            <div class="bg-black/80 border border-zinc-800 rounded-lg p-4 text-center relative overflow-visible">
+                <div class="absolute -top-2 left-4 px-1.5 bg-zinc-900 text-[8px] font-mono text-zinc-500 screenshot-text-safe">ARRIVED_TARGET_MATRIX</div>
+                <p class="text-[10px] text-zinc-500 tracking-widest mb-1.5 uppercase font-mono screenshot-text-safe">// 已定錨目標時間線 //</p>
+                <div id="card-arrival-time" class="text-base font-black text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-teal-300 font-mono tracking-normal whitespace-nowrap screenshot-text-safe">
                     2026年06月19日 02:17:14
                 </div>
             </div>
 
-            <div class="grid grid-cols-2 gap-3 font-mono text-xs">
-                <div class="bg-zinc-900/40 p-2.5 border border-zinc-850 rounded">
-                    <span class="text-[9px] text-zinc-600 block">維度跳躍跨度</span>
-                    <span id="card-stride" class="text-white font-bold">5 秒鐘</span>
+            <div class="grid grid-cols-2 gap-3 font-mono text-xs overflow-visible">
+                <div class="bg-zinc-900/40 p-2.5 border border-zinc-850 rounded overflow-visible">
+                    <span class="text-[9px] text-zinc-600 block screenshot-text-safe">維度跳躍跨度</span>
+                    <span id="card-stride" class="text-white font-bold screenshot-text-safe">5 秒鐘</span>
                 </div>
-                <div class="bg-zinc-900/40 p-2.5 border border-zinc-850 rounded">
-                    <span class="text-[9px] text-zinc-600 block">最高亂流峰值</span>
-                    <span id="card-max-turbo" class="text-rose-400 font-bold">8.92 級</span>
+                <div class="bg-zinc-900/40 p-2.5 border border-zinc-850 rounded overflow-visible">
+                    <span class="text-[9px] text-zinc-600 block screenshot-text-safe">最高亂流峰值</span>
+                    <span id="card-max-turbo" class="text-rose-400 font-bold screenshot-text-safe">8.92 級</span>
                 </div>
             </div>
 
-            <div class="bg-gradient-to-br from-zinc-900 to-black p-3.5 border border-zinc-800 rounded-lg relative">
-                <span class="absolute top-2 right-3 text-xl text-zinc-800 font-serif">“</span>
-                <span class="text-[9px] font-mono text-purple-400 block mb-1">◆ 量子觀測評語 //</span>
-                <p id="card-quote" class="text-xs text-zinc-300 leading-relaxed tracking-wide font-medium">
+            <div class="bg-gradient-to-br from-zinc-900 to-black p-3.5 border border-zinc-800 rounded-lg relative overflow-visible">
+                <span class="absolute top-2 right-3 text-xl text-zinc-800 font-serif screenshot-text-safe">“</span>
+                <span class="text-[9px] font-mono text-purple-400 block mb-1 screenshot-text-safe">◆ 量子觀測評語 //</span>
+                <p id="card-quote" class="text-xs text-zinc-300 leading-relaxed tracking-wide font-medium screenshot-text-safe">
                     「時間沒有消失，只是變成了你點擊緊急中止時，狂跳的心跳聲。」
                 </p>
             </div>
 
-            <div class="flex justify-between items-center border-t border-zinc-900 pt-3 mt-1">
-                <div class="font-mono text-[8px] text-zinc-600 uppercase">
+            <div class="flex justify-between items-center border-t border-zinc-900 pt-3 mt-1 overflow-visible">
+                <div class="font-mono text-[8px] text-zinc-600 uppercase screenshot-text-safe">
                     <p>Origin: SHILIN_TAIPEI</p>
                     <p class="mt-0.5">Status: COMPLETED_WITH_GLITCH</p>
                 </div>
-                <div class="flex flex-col items-end gap-1">
-                    <div class="flex gap-[1px] h-5 items-center">
+                <div class="flex flex-col items-end gap-1 overflow-visible">
+                    <div class="flex gap-[1px] h-5 items-center overflow-visible">
                         <div class="w-[2px] h-full bg-zinc-400"></div><div class="w-[1px] h-full bg-zinc-400"></div><div class="w-[3px] h-full bg-zinc-400"></div><div class="w-[1px] h-full bg-zinc-400"></div><div class="w-[2px] h-full bg-zinc-400"></div><div class="w-[4px] h-full bg-zinc-400"></div>
                     </div>
-                    <span class="text-[7px] font-mono text-zinc-600 tracking-widest">SYS_CLK_2026</span>
+                    <span class="text-[7px] font-mono text-zinc-600 tracking-widest screenshot-text-safe">SYS_CLK_2026</span>
                 </div>
             </div>
         </div>
@@ -702,16 +712,26 @@
             calculateTargetTime();
         }
 
-        // 核心修正：優化截圖參數，鎖定視窗邊界，解決移動端位移問題
         function saveCardAndRedirect() {
             const card = document.getElementById('capture-card');
+            
+            // 完美快照核心設定：防範移動端瀏覽器字體切邊與壓縮
             html2canvas(card, {
                 backgroundColor: '#0d0f14',
-                scale: 2, 
+                scale: 3, // 提高到 3 倍高畫質防止文字模糊
                 logging: false,
                 useCORS: true,
-                windowWidth: 420, // 鎖定虛擬畫布寬度，防堵移動端解析度造成的文字折疊
-                windowHeight: 600
+                allowTaint: true,
+                windowWidth: 400,
+                windowHeight: 580,
+                onclone: (clonedDoc) => {
+                    // 確保複製出的快照節點絕對允許溢出，不實施邊界裁剪
+                    const clonedCard = clonedDoc.getElementById('capture-card');
+                    if(clonedCard) {
+                        clonedCard.style.overflow = 'visible';
+                        clonedCard.style.boxShadow = 'none';
+                    }
+                }
             }).then(canvas => {
                 const image = canvas.toDataURL("image/png");
                 const link = document.createElement('a');
