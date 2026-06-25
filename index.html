@@ -25,12 +25,26 @@
             -webkit-tap-highlight-color: transparent;
             transition: transform 0.1s ease, border-color 0.3s ease;
             cursor: pointer;
+            position: relative;
+            overflow: hidden;
         }
         .project-card:active {
             transform: scale(0.98);
             border-color: #dc2626;
             background: #0d0d0d;
         }
+        
+        /* ✨ 最新推出卡片：微幅呼吸流光邊框特效 */
+        .featured-card {
+            border: 1px solid rgba(220, 38, 38, 0.25);
+            box-shadow: 0 0 10px rgba(220, 38, 38, 0.05);
+            animation: borderPulse 4s infinite ease-in-out;
+        }
+        @keyframes borderPulse {
+            0%, 100% { border-color: rgba(220, 38, 38, 0.25); box-shadow: 0 0 10px rgba(220, 38, 38, 0.05); }
+            50% { border-color: rgba(220, 38, 38, 0.6); box-shadow: 0 0 18px rgba(220, 38, 38, 0.15); }
+        }
+
         .btn-threads:active {
             transform: scale(0.95);
             background: #111;
@@ -42,7 +56,7 @@
         .animate-fade-in {
             animation: masterFadeIn 0.5s ease-out forwards;
         }
-        /* 跑馬燈核心動畫：極致放慢（60秒）以減輕視覺負擔 */
+        /* 跑馬燈核心動畫 */
         @keyframes marquee {
             0% { transform: translate3d(0, 0, 0); }
             100% { transform: translate3d(-50%, 0, 0); }
@@ -57,7 +71,25 @@
         }
     </style>
 </head>
-<body class="flex flex-col items-center justify-start min-h-screen px-5 py-8 sm:justify-center animate-fade-in">
+<body class="flex flex-col items-center justify-start min-h-screen px-5 pb-8 pt-20 sm:justify-center animate-fade-in relative">
+
+    <div class="fixed top-0 left-0 right-0 h-14 bg-[#030303]/90 border-b border-zinc-900/80 backdrop-blur-md z-40 flex items-center justify-center overflow-hidden">
+        <ins class="adsbygoogle"
+             style="display:inline-block;width:100%;height:50px"
+             data-ad-client="ca-pub-9874958587973886"
+             data-ad-slot="top_anchor_fluid"
+             data-full-width-responsive="true"></ins>
+        <script>
+             (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+    </div>
+
+    <div class="absolute top-16 right-4 z-30 font-mono text-[9px] flex items-center gap-1.5 bg-[#0a0a0a] border border-zinc-900 rounded px-2.5 py-1 select-none">
+        <span class="text-zinc-600">AUDIO_SYS:</span>
+        <button id="audio-toggle-btn" class="text-red-500 font-bold hover:text-red-400 transition-colors tracking-wider flex items-center gap-1 cursor-pointer">
+            <span>🔊</span><span>[ ENABLED ]</span>
+        </button>
+    </div>
 
     <div id="scene-loader" class="fixed inset-0 bg-black opacity-0 pointer-events-none transition-all duration-300 z-50 flex flex-col items-center justify-center space-y-2">
         <div class="text-[10px] text-red-600 font-mono tracking-[0.3em] uppercase opacity-0 transition-opacity duration-200" id="loader-text">
@@ -98,15 +130,36 @@
             </button>
         </section>
 
+        <section class="w-full bg-[#070707] border border-zinc-900/60 rounded-xl p-3 font-mono text-[10px] text-left grid grid-cols-2 gap-x-4 gap-y-1.5 select-none">
+            <div class="col-span-2 text-[9px] text-zinc-600 tracking-widest uppercase pb-1 border-b border-zinc-950 flex justify-between">
+                <span>[ ENV_RESONANCE_METRICS ]</span>
+                <span class="text-emerald-500 animate-pulse">● LIVE</span>
+            </div>
+            <div class="flex justify-between items-center py-0.5">
+                <span class="text-zinc-500">RESONANCE:</span>
+                <span id="metric-resonance" class="text-zinc-300 font-bold">64.21 Hz</span>
+            </div>
+            <div class="flex justify-between items-center py-0.5">
+                <span class="text-zinc-500">ENTROPY:</span>
+                <span id="metric-entropy" class="text-zinc-300 font-bold">λ-0.9412</span>
+            </div>
+            <div class="flex justify-between items-center py-0.5 border-t border-zinc-950/50 pt-1">
+                <span class="text-zinc-500">MATRIX_COH:</span>
+                <span id="metric-coherence" class="text-red-500 font-bold">HIGH_RANDOM</span>
+            </div>
+            <div class="flex justify-between items-center py-0.5 border-t border-zinc-950/50 pt-1">
+                <span class="text-zinc-500">CORE_TEMP:</span>
+                <span id="metric-temp" class="text-zinc-400">36.8 °C</span>
+            </div>
+        </section>
+
         <section class="w-full relative overflow-hidden bg-[#060606] border-y border-zinc-950 py-1.5 flex items-center select-none">
             <div class="absolute left-0 top-0 bottom-0 w-8 bg-gradient-to-r from-[#050505] to-transparent z-10 pointer-events-none"></div>
             
             <div class="marquee-content gap-12 font-mono text-[10px] text-red-950/80 tracking-widest">
+                <span>[SYS_ALERT] 2026.06.25 // NODE_04 聖三角潛意識占卜核心已成功部署，完成非對稱隨機矩陣校驗...</span>
                 <span>[SYS_ALERT] 2026.06.20 // 核心觸覺物理回饋系統 HAPTIC_V2.0 升級完畢...</span>
-                <span>[SYS_ALERT] 2026.05.14 // NODE_03 量子時幕同步核心已接入主網，動態金鑰校驗協議通過...</span>
-                <span>[SYS_ALERT] ALL SUB-NODES STATUS // ONLINE_ACTIVE // 數據快取機制正常運作中...</span>
-                <span>[SYS_ALERT] 2026.06.20 // 核心觸覺物理回饋系統 HAPTIC_V2.0 升級完畢...</span>
-                <span>[SYS_ALERT] 2026.05.14 // NODE_03 量子時幕同步核心已接入主網，動態金鑰校驗協議通過...</span>
+                <span>[SYS_ALERT] 2026.06.18 // NODE_03 量子時幕同步核心已接入主網，動態金鑰校驗協議通過...</span>
                 <span>[SYS_ALERT] ALL SUB-NODES STATUS // ONLINE_ACTIVE // 數據快取機制正常運作中...</span>
             </div>
 
@@ -116,6 +169,31 @@
         <hr class="border-zinc-900 w-full max-w-[60%] mx-auto my-2">
 
         <section class="space-y-4 text-left">
+            
+            <div class="flex justify-between items-center px-1">
+                <h3 class="text-[9px] text-red-500 font-mono tracking-[0.25em] uppercase font-bold animate-pulse">
+                    [ New_Release // 最新推出 ]
+                </h3>
+            </div>
+
+            <button data-href="./4/index.html" class="play-sound text-left w-full block project-card featured-card p-6 rounded-xl bg-gradient-to-br from-[#0a0a0a] to-[#0f0a0a]">
+                <div class="flex justify-between items-center mb-2.5">
+                    <h2 class="text-sm font-bold text-zinc-100 flex items-center gap-1.5">
+                        🃏 聖三角潛意識占卜 // 塔羅矩陣
+                    </h2>
+                    <span class="text-[9px] font-mono text-red-400 bg-red-950/40 px-2 py-0.5 rounded border border-red-900/50 tracking-wider">
+                        NEW_NODE
+                    </span>
+                </div>
+                <p class="text-xs text-zinc-500 leading-relaxed font-sans">
+                    啟動非對稱亂數能量投影。結合 78 張大阿爾克那與小阿爾克那卡牌，動態解構您當前時空底下的過去、現在與未來潛意識核心流動。
+                </p>
+            </button>
+
+            <div class="py-1">
+                <hr class="border-zinc-900 w-full max-w-[40%] mx-auto">
+            </div>
+
             <div class="flex justify-between items-center px-1">
                 <h3 class="text-[9px] text-zinc-600 font-mono tracking-[0.25em] uppercase">
                     [ Active_Sub-Nodes ]
@@ -174,10 +252,11 @@
                 [ SYS_CHANGELOG_TERMINAL ]
             </h3>
             <div class="w-full bg-[#070707] border border-zinc-900 rounded-xl p-4 font-mono text-[10px] text-zinc-500 space-y-1.5 leading-relaxed">
+                <div><span class="text-zinc-700">2026.06.25</span> // <span class="text-zinc-400">TAROT_MATRIX_DEPLOY</span> // 部署 Node_04 聖三角塔羅潛意識矩陣占卜系統，整合 78 張完整卡牌與跨平台截圖生成模組。</div>
                 <div><span class="text-zinc-700">2026.06.20</span> // <span class="text-zinc-400">BUILD_V3.9_HAPTIC</span> // 部署核心高敏震動物理回饋系統，優化行動端環境相容性。</div>
-                <div><span class="text-zinc-700">2026.05.14</span> // <span class="text-zinc-400">NODE_03_LAUNCH</span> // 部署「時空穿梭系統」，完成動態金鑰驗證協議測試。</div>
-                <div><span class="text-zinc-700">2026.03.02</span> // <span class="text-zinc-400">SECURE_TUNING</span> // 全站接入 JWT 加密權限驗證，修復 URL 參數防篡改限制。</div>
-                <div><span class="text-zinc-700">2025.12.18</span> // <span class="text-zinc-400">SYS_INITIALIZE</span> // 核心控制台 li_172.br 節點正式在主網上線。</div>
+                <div><span class="text-zinc-700">2026.06.18</span> // <span class="text-zinc-400">NODE_03_LAUNCH</span> // 部署「時空穿梭系統」，完成動態金鑰驗證協議測試。</div>
+                <div><span class="text-zinc-700">2026.06.16</span> // <span class="text-zinc-400">SECURE_TUNING</span> // 全站接入 JWT 加密權限驗證，修復 URL 參數防篡改限制。</div>
+                <div><span class="text-zinc-700">2026.06.15</span> // <span class="text-zinc-400">SYS_INITIALIZE</span> // 核心控制台 li_172.br 節點正式在主網上線。</div>
             </div>
         </section>
 
@@ -195,7 +274,7 @@
                     本站旗下所屬之核心實驗節點具備多樣化的數位互動型態：<br>
                     • <span class="text-zinc-400">Node_01 & Node_02（行為盲測模組）</span>：主體用於進行「社群網絡交互與集體潛意識」之行為科學觀測。透過高度解構性的心理情境盲測，動態剖析當代使用者在現實人格、社群面具與權力傾軋交織下的行為模式。<br>
                     • <span class="text-zinc-400">Node_03（時空穿梭系統）</span>：為核心工具實驗室，初始化量子時幕同步核心，支援使用者輸入自訂驗證金鑰與行動代號，動態觀測多維度時間亂流並即時在前端渲染生成旅行紀念小卡。<br>
-                    所有模組均採用響應式介面（Responsive Design）與極端優化之加載過場協議，確保在行動端與案頭端皆能呈現最高流暢度的視覺張力與沉浸感。
+                    • <span class="text-zinc-400">Node_04（聖三角塔羅占卜矩陣）</span>：為前沿潛意識能量投影模組。全面整合大/小阿爾克那共 78 張卡牌，結合高亂數非對稱解構演算法，精準對應過去、現在與未來的多維度時空節點，並引入網頁渲染引擎進行動態結果的實時轉譯。
                 </div>
                 <div>
                     <span class="font-mono text-[9px] text-zinc-400 block uppercase mb-0.5">03 // 數據安全與傳輸協議聲明</span>
@@ -237,9 +316,29 @@
             document.getElementById('counter').innerText = baseCount.toLocaleString();
         }, 4000);
 
-        // 音訊內容初始化
+        // ==========================================
+        // 音訊控制面板與全域開關核心 (預設開啟)
+        // ==========================================
         let audioCtx = null;
+        let isAudioEnabled = true; 
+
+        const audioToggleBtn = document.getElementById('audio-toggle-btn');
+        audioToggleBtn.addEventListener('click', (e) => {
+            e.stopPropagation(); 
+            isAudioEnabled = !isAudioEnabled;
+            if (isAudioEnabled) {
+                audioToggleBtn.innerHTML = '<span>🔊</span><span>[ ENABLED ]</span>';
+                audioToggleBtn.className = 'text-red-500 font-bold hover:text-red-400 transition-colors tracking-wider flex items-center gap-1 cursor-pointer';
+                initAudio();
+            } else {
+                audioToggleBtn.innerHTML = '<span>🔇</span><span>[ MUTED ]</span>';
+                audioToggleBtn.className = 'text-zinc-600 font-bold hover:text-zinc-500 transition-colors tracking-wider flex items-center gap-1 cursor-pointer';
+            }
+            triggerHapticFeedback(30);
+        });
+
         function initAudio() {
+            if (!isAudioEnabled) return;
             if (!audioCtx) {
                 audioCtx = new (window.AudioContext || window.webkitAudioContext)();
             }
@@ -249,6 +348,7 @@
         }
 
         function playClickSound() {
+            if (!isAudioEnabled) return;
             initAudio();
             if (!audioCtx) return;
 
@@ -276,17 +376,58 @@
             }
         }
 
+        // ==========================================
+        // 📊 環境能量數據即時演算模擬引擎
+        // ==========================================
+        function initEnvironmentMetricsEngine() {
+            const resEl = document.getElementById('metric-resonance');
+            const entEl = document.getElementById('metric-entropy');
+            const cohEl = document.getElementById('metric-coherence');
+            const tempEl = document.getElementById('metric-temp');
+
+            let baseRes = 64.21;
+            let baseEnt = 0.9412;
+            let baseTemp = 36.8;
+
+            setInterval(() => {
+                baseRes += (Math.random() - 0.5) * 0.8;
+                baseEnt += (Math.random() - 0.5) * 0.005;
+                baseTemp += (Math.random() - 0.5) * 0.2;
+
+                baseRes = Math.max(55.00, Math.min(78.00, baseRes));
+                baseEnt = Math.max(0.8500, Math.min(0.9999, baseEnt));
+                baseTemp = Math.max(35.8, Math.min(37.4, baseTemp));
+
+                if (resEl) resEl.innerText = `${baseRes.toFixed(2)} Hz`;
+                if (entEl) entEl.innerText = `λ-${baseEnt.toFixed(4)}`;
+                if (tempEl) tempEl.innerText = `${baseTemp.toFixed(1)} °C`;
+
+                if (cohEl) {
+                    const states = ['HIGH_RANDOM', 'STABLE_NODE', 'SYNC_MATRIX', 'WAVE_INTERF'];
+                    if (Math.random() > 0.7) {
+                        const randomState = states[Math.floor(Math.random() * states.length)];
+                        cohEl.innerText = randomState;
+                        if (randomState === 'SYNC_MATRIX') {
+                            cohEl.className = 'text-emerald-500 font-bold';
+                        } else if (randomState === 'WAVE_INTERF') {
+                            cohEl.className = 'text-yellow-500 font-bold';
+                        } else {
+                            cohEl.className = 'text-red-500 font-bold';
+                        }
+                    }
+                }
+            }, 2000);
+        }
+
         // 監聽交互事件
         document.querySelectorAll('.play-sound').forEach(element => {
             
-            // 保險 1：按下的瞬間震動 (15ms)
             const pressEvent = ('ontouchstart' in window) ? 'touchstart' : 'mousedown';
             element.addEventListener(pressEvent, function() {
                 if (this.classList.contains('navigating')) return;
                 triggerHapticFeedback(15);
             });
 
-            // 保險 2：確認點擊放開的瞬間再震動一次 (25ms)
             element.addEventListener('click', function(e) {
                 if (this.classList.contains('navigating')) return;
                 this.classList.add('navigating');
@@ -297,7 +438,6 @@
                 const targetUrl = this.getAttribute('data-href');
                 if (!targetUrl) return;
 
-                // Threads 協議喚起機制
                 if (this.id === 'threads-link') {
                     window.location.href = targetUrl;
                     setTimeout(() => { 
@@ -307,7 +447,6 @@
                     return;
                 }
 
-                // 系統傳輸介面喚起
                 const loader = document.getElementById('scene-loader');
                 const loaderText = document.getElementById('loader-text');
                 const loaderSubtext = document.getElementById('loader-subtext');
@@ -326,11 +465,13 @@
             });
         });
 
-        // 點擊解鎖音訊環境
+        document.addEventListener('DOMContentLoaded', () => {
+            initEnvironmentMetricsEngine();
+        });
+
         document.addEventListener('click', initAudio, { once: true });
         document.addEventListener('touchstart', initAudio, { once: true });
 
-        // 防止瀏覽器「返回」時快取問題
         window.addEventListener('pageshow', function (event) {
             if (event.persisted) {
                 const loader = document.getElementById('scene-loader');

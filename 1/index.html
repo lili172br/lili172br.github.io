@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
 <head>
+    <!-- Google AdSense 核心腳本 -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9874958587973886" crossorigin="anonymous"></script>
 
     <meta charset="UTF-8">
@@ -61,12 +62,29 @@
         .btn-action:active {
             transform: scale(0.97);
         }
+        
+        /* 黑客儀式感：解構切換特效 */
+        .glitch-flash {
+            animation: terminalFlash 0.18s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        @keyframes terminalFlash {
+            0% { opacity: 0.3; transform: scale(0.995); filter: brightness(1.8) saturate(1.5); }
+            50% { opacity: 0.7; transform: scale(1.002); filter: brightness(0.8); }
+            100% { opacity: 1; transform: scale(1); filter: brightness(1); }
+        }
     </style>
 </head>
-<body class="flex flex-col items-center justify-start min-h-screen px-4 py-8 sm:justify-center">
+<body class="flex flex-col items-center justify-start min-h-screen px-4 pb-8 pt-2 sm:justify-center">
+
+    <!-- 🎯 頂部常駐與自動錨定廣告預留防護牆 -->
+    <div id="top-ads-container" class="w-full max-w-xl mx-auto mb-4 min-h-[60px] flex flex-col items-center justify-center border border-dashed border-zinc-900 bg-zinc-950/30 rounded-xl px-2 text-[9px] text-zinc-700 tracking-widest text-center">
+        <span>[ GOOGLE AUTOMATIC ANCHOR AD SLOT / 頂部廣告預留空間 ]</span>
+        <span class="text-[8px] text-zinc-800 mt-0.5">避免系統自動貼附廣告時遮擋內容主體</span>
+    </div>
 
     <div class="max-w-xl w-full mx-auto space-y-6 my-auto">
         
+        <!-- 主頁階段（調整版結構：大幅增加段落密度與文字深度，誘發自動廣告插入） -->
         <div id="landing-stage" class="space-y-6">
             <header class="text-center border-b border-zinc-900 pb-6">
                 <h1 class="text-xl font-bold tracking-wider text-white mb-2">心理學特展：社群陰暗面研究</h1>
@@ -85,55 +103,82 @@
                 </button>
             </section>
 
-            <section class="space-y-5 text-sm text-zinc-400">
+            <!-- 🎯 廣告黃金引導位 01 -->
+            <div class="google-ads-placeholder my-2 w-full min-h-[20px]"></div>
+
+            <section class="space-y-6 text-sm text-zinc-400">
                 <div class="space-y-2">
                     <h2 class="text-xs font-bold text-white border-l-2 border-white pl-2 tracking-wider">關於榮格八維（Cognitive Functions）</h2>
-                    <p class="text-xs leading-relaxed text-justify">
-                        瑞士心理學家卡爾·榮格（Carl Jung）提出，人類的認知方式可以拆解為四種核心心理功能：內向/外向的思考（Te/Ti）、情感（Fe/Fi）、直覺（Ne/Ni）以及感覺（Se/Si）。這八種功能交互運作，形塑了每個人獨一無二的思維軌跡與行為模式。
+                    <p class="text-xs leading-relaxed text-justify text-zinc-400">
+                        瑞士心理學家卡爾·榮格（Carl Jung）提出，人類的認知方式可以拆解為四種核心心理功能：思考（T）、情感（F）、直覺（N）以及感覺（S）。當這些功能向內或向外延伸，便演化出更精準的八維矩陣模型。
+                    </p>
+                    <p class="text-xs leading-relaxed text-justify text-zinc-500">
+                        在現代心理學中，八維認知功能被廣泛運用於解構個體的內在決策路徑。不論是講求邏輯與客觀架構的 Te/Ti，還是關乎內心價值與集體連結的 Fi/Fe，這八種能量在我們每個人體內不斷交織、抗衡。
                     </p>
                 </div>
 
                 <div class="space-y-2">
                     <h2 class="text-xs font-bold text-white border-l-2 border-white pl-2 tracking-wider">什麼是「社群陰暗面」（The Social Media Shadow）？</h2>
-                    <p class="text-xs leading-relaxed text-justify">
-                        在現代數位生活中，當我們習慣在 Threads、Instagram 等平台表現出「理想中的自我」時，那些被壓抑、不願面對的特質，就會悄悄凝聚成榮格所說的「陰暗面（The Shadow）」。
+                    <p class="text-xs leading-relaxed text-justify text-zinc-400">
+                        在現代數位生活中，當我們習慣在 Threads、Instagram 或其他社群平台表現出「理想中的完美自我」時，那些與之相悖、不願面對的特質，就會悄悄凝聚成榮格所說的「陰暗面（The Shadow）」。
                     </p>
-                    <p class="text-xs leading-relaxed text-justify">
-                        陰暗面並非全然的邪惡，而是未被整合的自我投射。本研究透過當代社群互動行為，將其與榮格八維的劣勢功能進行交叉比對，幫助現代人在數位洪流中重新找回內在的個體化（Individuation）平衡。
+                    <p class="text-xs leading-relaxed text-justify text-zinc-500">
+                        陰暗面並非全然的邪惡，而是未被個體整合的自我投射。當你面對演算法的推波助瀾、大網網紅的翻車大瓜、或是按讚數不如預期的落差時，你潛意識中被壓抑的「劣勢功能（Inferior Function）」就會化為社群上的防禦面具。
+                    </p>
+                    <p class="text-xs leading-relaxed text-justify text-zinc-500">
+                        本量表研究透過當代社群平台的常見互動行為——包含人際內耗、跟風獵巫、資訊焦慮及匿名防禦等，將其與榮格八維的深度模型進行交叉比對，幫助現代人在失控的數位洪流中，重新找回內在的個體化（Individuation）平衡。
                     </p>
                 </div>
 
+                <!-- 🎯 廣告黃金引導位 02 -->
+                <div class="google-ads-placeholder my-4 w-full min-h-[20px]"></div>
+
                 <div class="space-y-2">
                     <h2 class="text-xs font-bold text-white border-l-2 border-white pl-2 tracking-wider">本測驗學術與應用範疇</h2>
-                    <ul class="text-xs space-y-1.5 list-disc pl-4">
-                        <li><strong>認知風格評估：</strong> 分析個體在高度數位化環境下的決策偏好。</li>
-                        <li><strong>陰暗面投射分析：</strong> 調查使用者在面臨社群演算法、按讚焦慮時的潛意識防禦。</li>
-                        <li><strong>社交人格指標：</strong> 提供多維度的性格光譜圖表與日常調適策略建議。</li>
+                    <p class="text-xs leading-relaxed text-zinc-400 mb-2">本大數據模型主要應用於以下三大數位行為學術領域的交叉觀測：</p>
+                    <ul class="text-xs space-y-2 list-disc pl-4 text-zinc-400">
+                        <li><strong>認知風格評估：</strong> 分析個體在高度數位化、資訊碎片化、高壓環境下的潛意識決策與過濾偏好。</li>
+                        <li><strong>陰暗面投射分析：</strong> 調查使用者在面臨社群演算法、群體狂熱、按讚焦慮時所產生的心理防禦與反彈機制。</li>
+                        <li><strong>社交人格指標：</strong> 提供多維度的性格光譜圖表，提供受測者最合適的日常情緒管理與數位調適策略建議。</li>
                     </ul>
                 </div>
+                
+                <div class="space-y-2">
+                    <h2 class="text-xs font-bold text-zinc-600 border-l-2 border-zinc-800 pl-2 tracking-wider">受測前聲明與個資保護條款</h2>
+                    <p class="text-[11px] leading-relaxed text-justify text-zinc-600">
+                        本量表為匿名學術與娛樂性質測試，本站完全不收集、不儲存任何使用者的真實姓名、瀏覽軌跡與隱私個資。測試結果圖表於本地端編譯下載後，由使用者自行保管。點擊開始測驗即代表您同意本站之去中心化研究方針與數據處理說明。
+                    </p>
+                </div>
             </section>
+
+            <!-- 🎯 廣告黃金引導位 03 -->
+            <div class="google-ads-placeholder my-4 w-full min-h-[20px]"></div>
 
             <footer class="text-center text-[10px] text-zinc-600 border-t border-zinc-900 pt-5 tracking-widest">
                 © 2026 Jungian Shadow Test Lab. All Rights Reserved.
             </footer>
         </div>
 
-        <div id="quiz-stage" class="cyber-panel border border-zinc-800 rounded-2xl p-6 space-y-6 hidden shadow-2xl">
+        <!-- 題目區塊（已加入極速轉場效果的容器） -->
+        <div id="quiz-stage" class="cyber-panel border border-zinc-800 rounded-2xl p-6 space-y-6 hidden shadow-2xl transition-all duration-200">
             <div class="w-full bg-zinc-900 h-1.5 rounded-full overflow-hidden">
                 <div id="progress-bar" class="h-full bg-emerald-500 w-0% transition-all duration-300"></div>
             </div>
             
-            <div class="space-y-1">
-                <div id="q-num" class="text-[10px] text-emerald-400 font-bold tracking-widest uppercase">QUESTION 01</div>
-                <div id="q-text" class="text-sm font-bold text-white leading-relaxed text-left min-h-[50px]">載入數據中...</div>
-            </div>
+            <div id="quiz-content-wrapper" class="space-y-6 transition-opacity duration-150">
+                <div class="space-y-1">
+                    <div id="q-num" class="text-[10px] text-emerald-400 font-bold tracking-widest uppercase">QUESTION 01</div>
+                    <div id="q-text" class="text-sm font-bold text-white leading-relaxed text-left min-h-[50px]">載入數據中...</div>
+                </div>
 
-            <div class="flex flex-col gap-3.5">
-                <button id="opt-A" onclick="handleOptionSelection('A')" class="option-btn text-xs text-left text-zinc-300 p-4 rounded-xl leading-relaxed"></button>
-                <button id="opt-B" onclick="handleOptionSelection('B')" class="option-btn text-xs text-left text-zinc-300 p-4 rounded-xl leading-relaxed"></button>
+                <div class="flex flex-col gap-3.5">
+                    <button id="opt-A" onclick="handleOptionSelection('A')" class="option-btn text-xs text-left text-zinc-300 p-4 rounded-xl leading-relaxed"></button>
+                    <button id="opt-B" onclick="handleOptionSelection('B')" class="option-btn text-xs text-left text-zinc-300 p-4 rounded-xl leading-relaxed"></button>
+                </div>
             </div>
         </div>
 
+        <!-- 結果展示區塊 -->
         <div id="result-stage" class="space-y-5 hidden">
             <div id="capture-area" class="bg-[#0c0c0c] border-2 border-emerald-500 rounded-2xl p-6 text-center space-y-5 shadow-2xl">
                 <div class="text-[9px] text-emerald-400 font-bold tracking-[0.3em] uppercase">MY SHADOW TYPE // 鑑定報告</div>
@@ -165,26 +210,33 @@
                 <div class="text-[9px] text-zinc-600 tracking-widest font-mono">⚠️ 警語：請立刻關掉手機去摸摸草</div>
             </div>
 
-            <div class="grid grid-cols-2 gap-3">
-                <button onclick="resetEvaluation()" class="btn-action w-full bg-zinc-900 border border-zinc-800 text-zinc-300 font-bold text-xs tracking-widest py-3.5 rounded-full hover:bg-zinc-800">
-                    再測一次
+            <!-- 按鈕區：已整合返回主頁與並列操作鍵 -->
+            <div class="flex flex-col gap-3">
+                <button onclick="resetToLanding()" class="btn-action w-full bg-zinc-950 border border-zinc-900 text-zinc-500 font-bold text-xs tracking-widest py-3 rounded-full hover:text-zinc-300 hover:border-zinc-700">
+                    ← 返回主頁
                 </button>
-                <button onclick="generateSnapshotAndNavigate()" class="btn-action w-full bg-emerald-500 text-black font-bold text-xs tracking-widest py-3.5 rounded-full hover:shadow-[0_0_15px_rgba(16,185,129,0.4)]">
-                    儲存結果
-                </button>
+                <div class="grid grid-cols-2 gap-3">
+                    <button onclick="resetEvaluation()" class="btn-action w-full bg-zinc-900 border border-zinc-800 text-zinc-300 font-bold text-xs tracking-widest py-3.5 rounded-full hover:bg-zinc-800">
+                        再測一次
+                    </button>
+                    <button onclick="generateSnapshotAndNavigate()" class="btn-action w-full bg-emerald-500 text-black font-bold text-xs tracking-widest py-3.5 rounded-full hover:shadow-[0_0_15px_rgba(16,185,129,0.4)]">
+                        儲存結果
+                    </button>
+                </div>
             </div>
         </div>
 
     </div>
 
     <script>
+        // 核心題庫配置
         const questions = [
             { type: "T", aScore: "Ti", bScore: "Te", text: "在脆上滑到沒做功課、上網查就有答案的「伸手黨」提問，你直覺是？", aText: "有夠躁，直接在心中翻白眼或開噴，覺得對方沒長腦。", bText: "雖然很瞎，但還是會點開留言區看有沒有人開打，順便吃瓜。" },
-            { type: "T", aScore: "Ti", bScore: "Te", text: "當網路上爆出某個大網紅的翻車大瓜，但證據還很不完整時，你會？", aText: "搬出鍵盤柯南精神，瘋狂交叉比對時間軸和漏洞看穿真相。", bText: "管他真的假的，先跟著大家在留言區卡一個哈密瓜轉發再說。" },
+            { type: "T", aScore: "Ti", bScore: "Te", text: "當網路上爆出某個大網紅的翻車大瓜，但證據還很不完整時，你会？", aText: "搬出鍵盤柯南精神，瘋狂交叉比對時間軸和漏洞看穿真相。", bText: "管他真的假的，先跟著大家在留言區卡一個哈密瓜轉發再說。" },
             { type: "T", aScore: "Ti", bScore: "Te", text: "朋友找你抱怨工作遇到了超級大爛人，你的安慰風格通常是？", aText: "保持理性，幫他分析那個爛人的心理，並幫忙想下一步對策。", bText: "站在他那邊，陪他一起瘋狂痛罵對方，發洩完情緒再說。" },
             { type: "F", aScore: "Fe", bScore: "Fi", text: "當你在群組講了一個自認好笑的梗，結果「完全沒人回、被無情洗貼圖」，你會？", aText: "表面裝沒事，但內心開始焦慮大家是不是在排擠我，默默想收回。", bText: "覺得是這群人不懂幽默，反正我自己覺得好笑就好。" },
             { type: "F", aScore: "Fi", bScore: "Fe", text: "好朋友突然退你追蹤，被你發現了，你的內心小劇場是？", aText: "算了啦，反正每個人階段不同，搞不好只是按錯或合不來。", bText: "天崩地裂，開始瘋狂回想最近是不是講錯話，陷入人際內耗。" },
-            { type: "F", aScore: "Fe", bScore: "Fi", text: "看到大家都在轉發某個正能量語錄，或是集體為某件事感動落淚時，你通常？", aText: "覺得有點溫馨，也會想跟著點讚或轉發分享這份正能量。", bText: "內心毫無波動，甚至覺得這群人集體自我感動到有點矯情。" },
+            { type: "F", aScore: "Fe", bScore: "Fi", text: "看到大家都在轉發某個正能量語錄，或是集體為某件事感動落淚時，你通常？", aText: "覺得有點溫馨，也會想跟著點讚或轉發分享這份正能量。", bText: "內心毫無波動，甚至覺得這群人集體自我感動到有點漸進。" },
             { type: "S", aScore: "Si", bScore: "Se", text: "看到網路上爆火的某個熱門景點、或是排隊排到爆的潮流公仔，你的反應是？", aText: "大家都去衝，這有什麼好稀奇的？反而故意不想去了解。", bText: "看看大家都在瘋什麼，搞不好很有趣，會想點進去或跟著買買看。" },
             { type: "S", aScore: "Se", bScore: "Si", text: "半夜突然失眠，在床上翻來覆去的時候，你通常都在想什麼？", aText: "沒想什麼，純粹點開各種沒營養的短影音或脆，滑到眼睛酸。", bText: "開始回想國中時期的黑歷史，或者焦慮五年後的自己會在哪裡。" },
             { type: "S", aScore: "Se", bScore: "Si", text: "關於生活或工作的「大方向改變」（例如換工作、搬家），你更符合哪種？", aText: "遇到機會就先衝了再說，計畫趕不上變化，船到橋頭自然直。", bText: "必須做好全面的心理準備和儲蓄計畫，不然會極度沒有安全感。" },
@@ -193,17 +245,20 @@
             { type: "N", aScore: "Ne", bScore: "Ni", text: "看到別人發了一篇語氣很酸、但沒有指名道姓的「黑名單抱怨文」，你會？", aText: "覺得跟自己無關，純粹當成別人的生活碎念，看過就忘。", bText: "開始對號入座，懷疑對方是不是在暗諷自己，校正回歸。" }
         ];
 
+        // 四種發瘋人格資料矩陣
         const results = {
             "Ti_Ni": { title: "網路偏執槓精", icon: "🤖", tags: ["#字體編譯器", "#邏輯糾察隊", "#內心翻白眼達人"], core: "在社群上自帶高傲的清高感。看到錯字、沒邏輯的言論、或是盲目跟風的潮流會極度煩躁。", symptom: "滑到熱門貼文不自覺想去糾正別人；或者打了一大串反駁文，最後覺得「算了跟笨蛋講不通」又默默刪掉。", good: "社群冷漠巨嬰", bad: "伸手黨", basePercent: 8 },
-            "Fe_Se": { title: "社群冷漠巨嬰", icon: "🤡", tags: ["#已讀亂回", "#吃瓜第一線", "#跟風大師"], core: "表面隨和好相處，內心極度懶惰敷衍。在網路上看大家吵架會覺得「好爽、多打一點」，是標準的樂子人。", symptom: "沒有自己的立場，風向往哪吹你就往哪倒. 其實很在乎讚數，發文沒人理會會偷偷難過。", good: "網路偏執槓精", bad: "極端正義魔人", basePercent: 42 },
-            "Fi_Si": { title: "孤傲自嗨邊緣人", icon: "🖤", tags: ["#小眾冷門控", "#小帳限定", "#深夜限定emo"], core: "深度活在自己的精神世界裡，自帶一種「沒有人真正懂我」的敏感文青病。", symptom: "習慣發一些只有自己看得懂的密碼學貼文。貼文太多人按讚反而會驚慌，覺得秘密基地變笨蛋入侵。", good: "網路偏執槓精", bad: "沒邊界感的社牛", basePercent: 14 },
+            "Fe_Se": { title: "社群冷漠巨嬰", icon: "🤡", tags: ["#已讀亂回", "#吃瓜第一線", "#跟風大師"], core: "表面隨和好相處，內心極度懶惰敷煙。在網路上看大家吵架會覺得「好爽、多打一點」，是標準的樂子人。", symptom: "沒有自己的立場，風向往哪吹你就往哪倒。其實很在乎讚數，發文沒人理會會偷偷難過。", good: "網路偏執槓精", bad: "極端正義魔人", basePercent: 42 },
+            "Fi_Si": { title: "孤傲自嗨邊緣人", icon: "🖤", tags: ["#小眾冷門控", "#小帳限定", "#深夜限定emo"], core: "深度活在自己的精神世界裡，自帶一種「沒有人真正懂我」的敏感文青病。", symptom: "習慣發一些只有自己看得懂的密碼學貼文。貼文太多人按讚反而會驚慌，覺得秘密基地被笨蛋入侵。", good: "網路偏執槓精", bad: "沒邊界感的社牛", basePercent: 14 },
             "Ne_Ni": { title: "深淵腦補內耗體", icon: "🌪️", tags: ["#資訊焦慮症", "#陰謀論大師", "#注意力剩3秒"], core: "大腦是一台24小時不關機的瘋狂發電機。習慣看到黑影就開槍，朋友限動少發一個貼圖就能腦補出一場背叛恩怨大戲。", symptom: "瘋狂刷脆深怕漏掉大瓜。看到別人抱怨文就對號入座「他是不是在影射我？」", good: "網路偏執槓精", bad: "斷章取義狂", basePercent: 28 }
         };
 
         let currentQuestion = 0;
         let userScores = { Ti: 0, Te: 0, Fi: 0, Fe: 0, Si: 0, Se: 0, Ni: 0, Ne: 0 };
+        let shadowSuppression = { Ti: 0, Te: 0, Fi: 0, Fe: 0, Si: 0, Se: 0, Ni: 0, Ne: 0 }; 
         let audioCtx = null;
 
+        // 隨機電子音效合成器
         function playClickSound(type = 'default') {
             try {
                 if (!window.AudioContext && !window.webkitAudioContext) return;
@@ -246,17 +301,14 @@
                     osc.stop(now + 0.06);
                 }
             } catch (e) {
-                console.warn("Audio Context isolated dynamically.");
+                console.warn("Audio Context isolated.");
             }
         }
 
-        // 🛠️ 已修正：將此函式移到最上面，確保在呼叫前已正確定義
         function activateQuizStage() {
             playClickSound('special');
-            
             const landing = document.getElementById("landing-stage");
             const quiz = document.getElementById("quiz-stage");
-            
             if (landing && quiz) {
                 landing.style.display = "none";
                 quiz.style.display = "block";
@@ -272,31 +324,44 @@
             }
         });
 
-        if (document.readyState === "complete" || document.readyState === "interactive") {
-            const startBtn = document.getElementById("start-quiz-btn");
-            if (startBtn) startBtn.addEventListener("click", activateQuizStage);
-        }
-
         function renderQuestion() { 
             if (currentQuestion >= questions.length) {
                 processEvaluationResult();
                 return;
             }
             const q = questions[currentQuestion]; 
-            document.getElementById("progress-bar").style.width = ((currentQuestion / questions.length) * 100) + "%";
-            document.getElementById("q-num").innerText = `QUESTION ${String(currentQuestion + 1).padStart(2, '0')}`;
-            document.getElementById("q-text").innerText = q.text; 
-            document.getElementById("opt-A").innerText = q.aText; 
-            document.getElementById("opt-B").innerText = q.bText;
+            
+            const stagePanel = document.getElementById("quiz-stage");
+            const contentWrapper = document.getElementById("quiz-content-wrapper");
+
+            // 黑客切換儀式感：閃爍動畫與極速淡入
+            stagePanel.classList.add("glitch-flash");
+            contentWrapper.style.opacity = "0.4";
+
+            setTimeout(() => {
+                document.getElementById("progress-bar").style.width = ((currentQuestion / questions.length) * 100) + "%";
+                document.getElementById("q-num").innerText = `QUESTION ${String(currentQuestion + 1).padStart(2, '0')}`;
+                document.getElementById("q-text").innerText = q.text; 
+                document.getElementById("opt-A").innerText = q.aText; 
+                document.getElementById("opt-B").innerText = q.bText;
+                contentWrapper.style.opacity = "1";
+            }, 60);
+
+            setTimeout(() => {
+                stagePanel.classList.remove("glitch-flash");
+            }, 180);
         }
         
         function handleOptionSelection(choice) { 
             playClickSound('default');
             const q = questions[currentQuestion]; 
+            
             if (choice === 'A') {
                 userScores[q.aScore]++;
+                shadowSuppression[q.bScore] += 0.5; 
             } else {
                 userScores[q.bScore]++; 
+                shadowSuppression[q.aScore] += 0.5; 
             }
             currentQuestion++; 
             renderQuestion(); 
@@ -306,11 +371,12 @@
             document.getElementById("quiz-stage").style.display = "none"; 
             document.getElementById("result-stage").style.display = "block";
             
+            // 正向指標與劣勢功能壓抑值加權運算
             const weights = {
-                "Ti_Ni": userScores.Ti + userScores.Ni,
-                "Fe_Se": userScores.Fe + userScores.Se,
-                "Fi_Si": userScores.Fi + userScores.Si,
-                "Ne_Ni": userScores.Ne + userScores.Ni
+                "Ti_Ni": (userScores.Ti + shadowSuppression.Ti * 0.8) + (userScores.Ni + shadowSuppression.Ni * 0.8),
+                "Fe_Se": (userScores.Fe + shadowSuppression.Fe * 0.8) + (userScores.Se + shadowSuppression.Se * 0.8),
+                "Fi_Si": (userScores.Fi + shadowSuppression.Fi * 0.8) + (userScores.Si + shadowSuppression.Si * 0.8),
+                "Ne_Ni": (userScores.Ne + shadowSuppression.Ne * 0.8) + (userScores.Ni + shadowSuppression.Ni * 0.8)
             };
 
             let resultKey = "Fe_Se";
@@ -323,7 +389,14 @@
             }
 
             const res = results[resultKey]; 
-            const finalPercent = res.basePercent + (maxWeight % 4); 
+            
+            // 隨機亂數優化：基於時間種子與浮動亂數，避免重合感
+            const timeSeed = new Date().getMilliseconds() % 3;
+            const randomOffset = Math.floor(Math.random() * 2);
+            let finalPercent = res.basePercent + (Math.floor(maxWeight) % 4) + timeSeed + randomOffset;
+            
+            if (finalPercent >= 97) finalPercent = 96;
+            if (finalPercent <= 3) finalPercent = 5;
             
             document.getElementById("res-icon").innerText = res.icon; 
             document.getElementById("res-title").innerText = `【${res.title}】`;
@@ -347,8 +420,23 @@
             playClickSound('reset');
             currentQuestion = 0; 
             userScores = { Ti: 0, Te: 0, Fi: 0, Fe: 0, Si: 0, Se: 0, Ni: 0, Ne: 0 }; 
+            shadowSuppression = { Ti: 0, Te: 0, Fi: 0, Fe: 0, Si: 0, Se: 0, Ni: 0, Ne: 0 }; 
             document.getElementById("result-stage").style.display = "none"; 
             document.getElementById("landing-stage").style.display = "block"; 
+        }
+
+        // 完全重設所有數據，並回到最上方的主頁畫面（提高廣告刷新率）
+        function resetToLanding() {
+            playClickSound('reset');
+            currentQuestion = 0; 
+            userScores = { Ti: 0, Te: 0, Fi: 0, Fe: 0, Si: 0, Se: 0, Ni: 0, Ne: 0 }; 
+            shadowSuppression = { Ti: 0, Te: 0, Fi: 0, Fe: 0, Si: 0, Se: 0, Ni: 0, Ne: 0 }; 
+            
+            document.getElementById("result-stage").style.display = "none"; 
+            document.getElementById("landing-stage").style.display = "block"; 
+            
+            // 平滑滾動至頂部防護牆
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
         
         function generateSnapshotAndNavigate() {
